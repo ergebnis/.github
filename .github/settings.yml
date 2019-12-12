@@ -28,7 +28,7 @@ repository:
   allow_rebase_merge: false
   allow_squash_merge: false
   default_branch: master
-  description: ":heart: Provides default community health files for the @ergebnis organization"
+  description: ":heart: Provides default community health files for the @ergebnis organization."
   has_downloads: false
   has_issues: false
   has_pages: false
