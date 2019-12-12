@@ -36,3 +36,4 @@ repository:
   has_wiki: false
   name: .github
   private: false
+  topics: "default, community, health, files"
