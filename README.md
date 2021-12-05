@@ -2,6 +2,7 @@
 
 [![Integrate](https://github.com/ergebnis/.github/workflows/Integrate/badge.svg?branch=main)](https://github.com/ergebnis/.github/actions)
 [![Merge](https://github.com/ergebnis/.github/workflows/Merge/badge.svg?branch=main)](https://github.com/ergebnis/.github/actions)
+[![Triage](https://github.com/ergebnis/.github/workflows/Triage/badge.svg?branch=main)](https://github.com/ergebnis/.github/actions)
 
 Provides community health files for the [@ergebnis](https://github.com/ergebnis) organization.
 
