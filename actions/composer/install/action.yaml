@@ -12,6 +12,10 @@ inputs:
     default: "locked"
     description: "Which dependencies to install, one of \"lowest\", \"locked\", \"highest\""
     required: true
+  working-directory:
+    default: "."
+    description: "Which directory to use as working directory"
+    required: true
 
 runs:
   using: "composite"
@@ -20,5 +24,6 @@ runs:
     - name: "Install ${{ inputs.dependencies }} dependencies with composer"
       env:
         COMPOSER_INSTALL_DEPENDENCIES: "${{ inputs.dependencies }}"
+        COMPOSER_INSTALL_WORKING_DIRECTORY: "${{ inputs.working-directory }}"
       run: "${{ github.action_path }}/run.sh"
       shell: "bash"
