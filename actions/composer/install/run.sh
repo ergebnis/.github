@@ -10,19 +10,19 @@ if [[ ! -d ${workingDirectory} ]]; then
 fi
 
 if [[ ${dependencies} == "lowest" ]]; then
-    composer update --ansi --no-interaction --no-progress --prefer-lowest -working-dir="${workingDirectory}"
+    composer update --ansi --no-interaction --no-progress --prefer-lowest --working-dir="${workingDirectory}"
 
     exit $?
 fi
 
 if [[ ${dependencies} == "locked" ]]; then
-    composer install --ansi --no-interaction --no-progress -working-dir="${workingDirectory}"
+    composer install --ansi --no-interaction --no-progress --working-dir="${workingDirectory}"
 
     exit $?
 fi
 
 if [[ ${dependencies} == "highest" ]]; then
-    composer update --ansi --no-interaction --no-progress -working-dir="${workingDirectory}"
+    composer update --ansi --no-interaction --no-progress --working-dir="${workingDirectory}"
 
     exit $?
 fi
