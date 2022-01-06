@@ -10,21 +10,21 @@ if [[ ! -d ${workingDirectory} ]]; then
 fi
 
 if [[ ${dependencies} == "lowest" ]]; then
-  composer update --ansi --no-interaction --no-progress --prefer-lowest -working-dir="${workingDirectory}"
+    composer update --ansi --no-interaction --no-progress --prefer-lowest -working-dir="${workingDirectory}"
 
-  exit $?
+    exit $?
 fi
 
 if [[ ${dependencies} == "locked" ]]; then
-  composer install --ansi --no-interaction --no-progress -working-dir="${workingDirectory}"
+    composer install --ansi --no-interaction --no-progress -working-dir="${workingDirectory}"
 
-  exit $?
+    exit $?
 fi
 
 if [[ ${dependencies} == "highest" ]]; then
-  composer update --ansi --no-interaction --no-progress -working-dir="${workingDirectory}"
+    composer update --ansi --no-interaction --no-progress -working-dir="${workingDirectory}"
 
-  exit $?
+    exit $?
 fi
 
 echo "::error::The value for the \"dependencies\" input needs to be one of \"lowest\", \"locked\", \"highest\" - got \"${dependencies}\" instead."
