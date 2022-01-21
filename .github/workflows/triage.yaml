@@ -31,15 +31,21 @@ jobs:
 
             const matches = branchName.match(new RegExp('^([^/]+)\/'));;
 
-            if (matches instanceof Array && branchPrefixLabels.hasOwnProperty(matches[1])) {
-              const label = branchPrefixLabels[matches[1]];
-
-              github.issues.addLabels({
-                issue_number: pullRequest.number,
-                labels: [
-                  label,
-                ],
-                owner: repository.owner,
-                repo: repository.repo,
-              });
+            if (!matches instanceof Array) {
+              return;
             }
+
+            if (!branchPrefixLabels.hasOwnProperty(matches[1])) {
+              return;
+            }
+
+            const label = branchPrefixLabels[matches[1]];
+
+            github.issues.addLabels({
+              issue_number: pullRequest.number,
+              labels: [
+                label,
+              ],
+              owner: repository.owner,
+              repo: repository.repo,
+            });
