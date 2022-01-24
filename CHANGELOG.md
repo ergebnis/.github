@@ -6,7 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`1.3.1...main`][1.3.1...main].
+For a full diff see [`1.3.2...main`][1.3.2...main].
+
+## [`1.3.2`][1.3.2]
+
+For a full diff see [`1.3.1...1.3.2`][1.3.1...1.3.2].
+
+### Fixed
+
+- Fixed a condition ([#76]), by [@localheinz]
 
 ## [`1.3.1`][1.3.1]
 
@@ -63,6 +71,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [1.2.1]: https://github.com/ergebnis/.github/releases/tag/1.2.1
 [1.3.0]: https://github.com/ergebnis/.github/releases/tag/1.3.0
 [1.3.1]: https://github.com/ergebnis/.github/releases/tag/1.3.1
+[1.3.2]: https://github.com/ergebnis/.github/releases/tag/1.3.2
 
 [ca7f15d...1.0.0]: https://github.com/ergebnis/.github/compare/ca7f15d...1.0.0
 [1.0.0...1.1.0]: https://github.com/ergebnis/.github/compare/1.0.0...1.1.0
@@ -70,7 +79,8 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [1.2.0...1.2.1]: https://github.com/ergebnis/.github/compare/1.2.0...1.2.1
 [1.2.1...1.3.0]: https://github.com/ergebnis/.github/compare/1.2.1...1.3.0
 [1.3.0...1.3.1]: https://github.com/ergebnis/.github/compare/1.3.0...1.3.1
-[1.3.1...main]: https://github.com/ergebnis/.github/compare/1.3.1...main
+[1.3.1...1.3.2]: https://github.com/ergebnis/.github/compare/1.3.1...1.3.2
+[1.3.2...main]: https://github.com/ergebnis/.github/compare/1.3.2...main
 
 [#47]: https://github.com/ergebnis/.github/pull/47
 [#48]: https://github.com/ergebnis/.github/pull/48
@@ -82,5 +92,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#67]: https://github.com/ergebnis/.github/pull/67
 [#72]: https://github.com/ergebnis/.github/pull/72
 [#73]: https://github.com/ergebnis/.github/pull/73
+[#76]: https://github.com/ergebnis/.github/pull/76
 
 [@localheinz]: https://github.com/localheinz
