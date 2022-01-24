@@ -42,6 +42,8 @@ runs:
 
     - name: "Add assignee to pull request"
       uses: "actions/github-script@v5"
+      env:
+        ASSIGNEE: "${{ inputs.assignee }}"
       with:
         github-token: "${{ inputs.github-token }}"
         script: |
@@ -52,7 +54,7 @@ runs:
           }
 
           const assignees = [
-            core.getInput("assignee"),
+            process.env.ASSIGNEE,
           ];
 
           try {
