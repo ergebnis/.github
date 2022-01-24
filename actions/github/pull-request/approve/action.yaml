@@ -43,7 +43,7 @@ runs:
         github-token: "${{ inputs.github-token }}"
         script: |
           if (!process.env.PULL_REQUEST_NUMBER) {
-            core.setFailed("The environment variable PULL_REQUEST_NUMBER is not defined.")
+            core.setFailed("The environment variable PULL_REQUEST_NUMBER is not defined.");
 
             return;
           }
