@@ -1,0 +1,79 @@
+# https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-run-steps-actions
+# https://docs.github.com/en/rest/reference/issues#add-labels-to-an-issue
+# https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
+# https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#workflow_run
+
+name: "Add label to pull request based on branch name"
+
+description: "Adds a label to a pull request based on the branch name"
+
+inputs:
+  github-token:
+    description: "GitHub token of a user with permission to add labels to to a pull request"
+    required: true
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: "Determine pull request number"
+      uses: "actions/github-script@v5"
+      with:
+        github-token: "${{ inputs.github-token }}"
+        script: |
+          if (
+            context.eventName == 'pull_request' ||
+            context.eventName == 'pull_request_target'
+          ) {
+            core.exportVariable("PULL_REQUEST_NUMBER", context.payload.pull_request.number);
+            core.exportVariable("PULL_REQUEST_BRANCH_NAME", context.payload.pull_request.head.ref);
+
+            return;
+          }
+
+          core.setFailed(`Unable to determine the pull request number and branch name for event "${context.eventName}"`);
+
+    - name: "Add label to pull request based on branch name"
+      uses: "actions/github-script@v5"
+      with:
+        github-token: "${{ inputs.github-token }}"
+        script: |
+          if (!process.env.PULL_REQUEST_NUMBER) {
+            core.setFailed("The environment variable PULL_REQUEST_NUMBER is not defined.");
+
+            return;
+          }
+
+          if (!process.env.PULL_REQUEST_BRANCH_NAME) {
+            core.setFailed("The environment variable PULL_REQUEST_BRANCH_NAME is not defined.");
+
+            return;
+          }
+
+          const branchPrefixToLabel = {
+            feature: "enhancement",
+            fix: "bug",
+          };
+
+          const matches = process.env.PULL_REQUEST_BRANCH_NAME.match(new RegExp('^([^/]+)\/'));
+
+          if (!matches instanceof Array) {
+            return;
+          }
+
+          if (!branchPrefixToLabel.hasOwnProperty(matches[1])) {
+            return;
+          }
+
+          const label = branchPrefixToLabel[matches[1]];
+
+          github.rest.issues.addLabels({
+            issue_number: process.env.PULL_REQUEST_NUMBER,
+            labels: [
+              label,
+            ],
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+          });

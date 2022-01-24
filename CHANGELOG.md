@@ -13,6 +13,7 @@ For a full diff see [`1.2.1...main`][1.2.1...main].
 - Added composite action `github/add-assignee-to-pull-request` ([#59]), by [@localheinz]
 - Added composite action `github/approve-pull-request` ([#60]), by [@localheinz]
 - Added composite action `github/merge-pull-request` ([#64]), by [@localheinz]
+- Added composite action `github/pull-request/add-label-based-on-branch-name` ([#67]), by [@localheinz]
 
 ## [`1.2.1`][1.2.1]
 
@@ -64,5 +65,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#59]: https://github.com/ergebnis/.github/pull/59
 [#60]: https://github.com/ergebnis/.github/pull/60
 [#64]: https://github.com/ergebnis/.github/pull/64
+[#67]: https://github.com/ergebnis/.github/pull/67
 
 [@localheinz]: https://github.com/localheinz
