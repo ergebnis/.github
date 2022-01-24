@@ -14,37 +14,7 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-      - name: "Determine release tag"
-        run: "echo \"RELEASE_TAG=${GITHUB_REF#refs/tags/}\" >> $GITHUB_ENV"
-
-      - name: "Determine release body"
-        uses: "actions/github-script@v5"
-        with:
-          github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
-          script: |
-            const repository = context.repo;
-
-            const response = await github.rest.repos.generateReleaseNotes({
-              owner: repository.owner,
-              repo: repository.repo,
-              tag_name: "${{ env.RELEASE_TAG }}",
-            });
-
-            core.exportVariable("RELEASE_BODY", response.data.body);
-
       - name: "Create release"
-        uses: "actions/github-script@v5"
+        uses: "ergebnis/.github/actions/github/release/create@main"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
-          script: |
-            const repository = context.repo;
-
-            await github.rest.repos.createRelease({
-              body: "${{ env.RELEASE_BODY }}",
-              draft: false,
-              name: "${{ env.RELEASE_TAG }}",
-              owner: repository.owner,
-              prerelease: false,
-              repo: repository.repo,
-              tag_name: "${{ env.RELEASE_TAG }}",
-            });
