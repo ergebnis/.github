@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.2.1...main`][1.2.1...main].
 
+## [`1.3.0`][1.3.0]
+
+For a full diff see [`1.2.1...1.3.0`][1.2.1...1.3.0].
+
 ### Added
 
 - Added composite action `github/pull-request/add-assignee` ([#59]), by [@localheinz]
@@ -58,7 +62,8 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [1.0.0...1.1.0]: https://github.com/ergebnis/.github/compare/1.0.0...1.1.0
 [1.1.0...1.2.0]: https://github.com/ergebnis/.github/compare/1.1.0...1.2.0
 [1.2.0...1.2.1]: https://github.com/ergebnis/.github/compare/1.2.0...1.2.1
-[1.2.1...main]: https://github.com/ergebnis/.github/compare/1.2.1...main
+[1.2.1...1.3.0]: https://github.com/ergebnis/.github/compare/1.2.1...1.3.0
+[1.3.0...main]: https://github.com/ergebnis/.github/compare/1.3.0...main
 
 [#47]: https://github.com/ergebnis/.github/pull/47
 [#48]: https://github.com/ergebnis/.github/pull/48
