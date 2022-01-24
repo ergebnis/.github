@@ -27,7 +27,7 @@ runs:
         github-token: "${{ inputs.github-token }}"
         script: |
           if (
-            context.eventName == 'pull_request' ||) {
+            context.eventName == 'pull_request' ||
             context.eventName == 'pull_request_target'
           ) {
             core.exportVariable("PULL_REQUEST_NUMBER", context.payload.pull_request.number);
