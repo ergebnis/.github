@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.2.1...main`][1.2.1...main].
 
+### Added
+
+- Added composite action `github/add-assignee-to-pull-request` ([#59]), by [@localheinz]
+
 ## [`1.2.1`][1.2.1]
 
 For a full diff see [`1.2.0...1.2.1`][1.2.0...1.2.1].
@@ -55,5 +59,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#48]: https://github.com/ergebnis/.github/pull/48
 [#52]: https://github.com/ergebnis/.github/pull/52
 [#54]: https://github.com/ergebnis/.github/pull/54
+[#59]: https://github.com/ergebnis/.github/pull/59
 
 [@localheinz]: https://github.com/localheinz
