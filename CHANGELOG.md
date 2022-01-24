@@ -15,6 +15,7 @@ For a full diff see [`1.2.1...main`][1.2.1...main].
 - Added composite action `github/pull-request/merge` ([#64]), by [@localheinz]
 - Added composite action `github/pull-request/add-label-based-on-branch-name` ([#67]), by [@localheinz]
 - Added composite action `github/release/create` ([#72]), by [@localheinz]
+- Added composite action `github/pull-request/request-review` ([#73]), by [@localheinz]
 
 ## [`1.2.1`][1.2.1]
 
@@ -68,5 +69,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#64]: https://github.com/ergebnis/.github/pull/64
 [#67]: https://github.com/ergebnis/.github/pull/67
 [#72]: https://github.com/ergebnis/.github/pull/72
+[#73]: https://github.com/ergebnis/.github/pull/73
 
 [@localheinz]: https://github.com/localheinz
