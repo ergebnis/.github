@@ -10,9 +10,9 @@ For a full diff see [`1.2.1...main`][1.2.1...main].
 
 ### Added
 
-- Added composite action `github/add-assignee-to-pull-request` ([#59]), by [@localheinz]
-- Added composite action `github/approve-pull-request` ([#60]), by [@localheinz]
-- Added composite action `github/merge-pull-request` ([#64]), by [@localheinz]
+- Added composite action `github/pull-request/add-assignee` ([#59]), by [@localheinz]
+- Added composite action `github/pull-request/approve` ([#60]), by [@localheinz]
+- Added composite action `github/pull-request/merge` ([#64]), by [@localheinz]
 - Added composite action `github/pull-request/add-label-based-on-branch-name` ([#67]), by [@localheinz]
 
 ## [`1.2.1`][1.2.1]
