@@ -52,7 +52,7 @@ runs:
           }
 
           const assignees = [
-            "${{ inputs.assignee }}",
+            core.getInput("assignee"),
           ];
 
           try {
