@@ -23,7 +23,7 @@ runs:
       shell: "bash"
 
     - name: "Create release"
-      uses: "actions/github-script@v5"
+      uses: "actions/github-script@v6.0.0"
       with:
         github-token: "${{ inputs.github-token }}"
         script: |
