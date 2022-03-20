@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.3.2...main`][1.3.2...main].
 
+### Changed
+
+- Updated `actions/github-script` ([#79]), by [@localheinz]
+
 ## [`1.3.2`][1.3.2]
 
 For a full diff see [`1.3.1...1.3.2`][1.3.1...1.3.2].
@@ -93,5 +97,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#72]: https://github.com/ergebnis/.github/pull/72
 [#73]: https://github.com/ergebnis/.github/pull/73
 [#76]: https://github.com/ergebnis/.github/pull/76
+[#79]: https://github.com/ergebnis/.github/pull/79
 
 [@localheinz]: https://github.com/localheinz
