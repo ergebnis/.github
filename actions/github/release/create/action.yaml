@@ -34,7 +34,7 @@ runs:
           }
 
           try {
-            await github.rest.repos.createRelease({
+            const response = await github.rest.repos.createRelease({
               draft: false,
               generate_release_notes: true,
               name: process.env.RELEASE_TAG,

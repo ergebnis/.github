@@ -6,7 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`1.4.0...main`][1.4.0...main].
+For a full diff see [`1.4.1...main`][1.4.1...main].
+
+## [`1.4.1`][1.4.1]
+
+For a full diff see [`1.4.0...1.4.1`][1.4.0...1.4.1].
+
+### Fixed
+
+- Captured response in the composite action `github/release/create` ([#82]), by [@localheinz]
 
 ## [`1.4.0`][1.4.0]
 
@@ -91,7 +99,8 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [1.3.0...1.3.1]: https://github.com/ergebnis/.github/compare/1.3.0...1.3.1
 [1.3.1...1.3.2]: https://github.com/ergebnis/.github/compare/1.3.1...1.3.2
 [1.3.2...1.4.0]: https://github.com/ergebnis/.github/compare/1.3.2...1.4.0
-[1.4.0...main]: https://github.com/ergebnis/.github/compare/1.4.0...main
+[1.4.0...1.4.1]: https://github.com/ergebnis/.github/compare/1.4.0...1.4.1
+[1.4.1...main]: https://github.com/ergebnis/.github/compare/1.4.1...main
 
 [#47]: https://github.com/ergebnis/.github/pull/47
 [#48]: https://github.com/ergebnis/.github/pull/48
@@ -106,5 +115,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#76]: https://github.com/ergebnis/.github/pull/76
 [#79]: https://github.com/ergebnis/.github/pull/79
 [#80]: https://github.com/ergebnis/.github/pull/80
+[#82]: https://github.com/ergebnis/.github/pull/82
 
 [@localheinz]: https://github.com/localheinz
