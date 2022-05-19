@@ -11,7 +11,7 @@ inputs:
   working-directory:
     default: "."
     description: "Which directory to use as working directory"
-    required: false
+    required: true
 
 runs:
   using: "composite"
