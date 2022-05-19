@@ -13,3 +13,69 @@ updates:
     package-ecosystem: "github-actions"
     schedule:
       interval: "daily"
+
+  - commit-message:
+      include: "scope"
+      prefix: "github-actions"
+    directory: "/actions/github/pull-request/add-assignee"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "daily"
+
+  - commit-message:
+      include: "scope"
+      prefix: "github-actions"
+    directory: "/actions/github/pull-request/add-label-based-on-branch-name"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "daily"
+
+  - commit-message:
+      include: "scope"
+      prefix: "github-actions"
+    directory: "/actions/github/pull-request/approve"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "daily"
+
+  - commit-message:
+      include: "scope"
+      prefix: "github-actions"
+    directory: "/actions/github/pull-request/merge"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "daily"
+
+  - commit-message:
+      include: "scope"
+      prefix: "github-actions"
+    directory: "/actions/github/pull-request/request-review"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "daily"
+
+  - commit-message:
+      include: "scope"
+      prefix: "github-actions"
+    directory: "/actions/github/release/create"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "daily"
