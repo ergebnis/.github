@@ -65,7 +65,7 @@ repository:
   archived: false
   default_branch: "main"
   delete_branch_on_merge: true
-  description: ":heart: Provides default community health files for the @ergebnis organization."
+  description: ":heart: Provides default community health files and composite actions for the @ergebnis organization."
   has_downloads: false
   has_issues: false
   has_pages: false
@@ -76,4 +76,4 @@ repository:
 
   # https://docs.github.com/en/rest/reference/repos#replace-all-repository-topics
 
-  topics: "default, community, health, files"
+  topics: "default, community, health, files, composite, actions"
