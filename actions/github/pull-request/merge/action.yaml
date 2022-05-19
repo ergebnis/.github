@@ -23,7 +23,7 @@ runs:
 
   steps:
     - name: "Determine pull request number"
-      uses: "actions/github-script@v6.0.0"
+      uses: "actions/github-script@v6.1.0"
       with:
         github-token: "${{ inputs.github-token }}"
         script: |
@@ -45,7 +45,7 @@ runs:
           core.setFailed(`Unable to determine the pull request number for event "${context.eventName}"`);
 
     - name: "Merge pull request"
-      uses: "actions/github-script@v6.0.0"
+      uses: "actions/github-script@v6.1.0"
       env:
         MERGE_METHOD: "${{ inputs.merge-method }}"
       with:
