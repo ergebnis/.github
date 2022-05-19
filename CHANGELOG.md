@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.4.1...main`][1.4.1...main].
 
+### Fixed
+
+- Required a value for the `working-directory` input of the composite action `composer/determine-cache-directory` ([#82]), by [@localheinz]
+
 ## [`1.4.1`][1.4.1]
 
 For a full diff see [`1.4.0...1.4.1`][1.4.0...1.4.1].
