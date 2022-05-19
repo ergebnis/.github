@@ -6,7 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`1.4.1...main`][1.4.1...main].
+For a full diff see [`1.5.0...main`][1.5.0...main].
+
+## [`1.5.0`][1.5.0]
+
+For a full diff see [`1.4.1...1.5.0`][1.4.1...1.5.0].
+
+### Added
+
+- Added composite action `composer/determine-root-version` ([#87]), by [@localheinz]
 
 ### Fixed
 
@@ -95,6 +103,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [1.3.2]: https://github.com/ergebnis/.github/releases/tag/1.3.2
 [1.4.0]: https://github.com/ergebnis/.github/releases/tag/1.4.0
 [1.4.1]: https://github.com/ergebnis/.github/releases/tag/1.4.1
+[1.5.0]: https://github.com/ergebnis/.github/releases/tag/1.5.0
 
 [ca7f15d...1.0.0]: https://github.com/ergebnis/.github/compare/ca7f15d...1.0.0
 [1.0.0...1.1.0]: https://github.com/ergebnis/.github/compare/1.0.0...1.1.0
@@ -105,7 +114,8 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [1.3.1...1.3.2]: https://github.com/ergebnis/.github/compare/1.3.1...1.3.2
 [1.3.2...1.4.0]: https://github.com/ergebnis/.github/compare/1.3.2...1.4.0
 [1.4.0...1.4.1]: https://github.com/ergebnis/.github/compare/1.4.0...1.4.1
-[1.4.1...main]: https://github.com/ergebnis/.github/compare/1.4.1...main
+[1.4.1...1.5.0]: https://github.com/ergebnis/.github/compare/1.4.1...1.5.0
+[1.5.0...main]: https://github.com/ergebnis/.github/compare/1.5.0...main
 
 [#47]: https://github.com/ergebnis/.github/pull/47
 [#48]: https://github.com/ergebnis/.github/pull/48
@@ -121,5 +131,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#79]: https://github.com/ergebnis/.github/pull/79
 [#80]: https://github.com/ergebnis/.github/pull/80
 [#82]: https://github.com/ergebnis/.github/pull/82
+[#87]: https://github.com/ergebnis/.github/pull/87
 
 [@localheinz]: https://github.com/localheinz
