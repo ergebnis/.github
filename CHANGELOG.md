@@ -8,6 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.5.0...main`][1.5.0...main].
 
+## [`1.5.1`][1.5.1]
+
+For a full diff see [`1.5.0...1.5.1`][1.5.0...1.5.1].
+
+### Added
+
+- Fixed a condition in `github/pull-request/add-label-based-on-branch-name` ([#96]), by [@localheinz]
+
 ## [`1.5.0`][1.5.0]
 
 For a full diff see [`1.4.1...1.5.0`][1.4.1...1.5.0].
@@ -104,6 +112,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [1.4.0]: https://github.com/ergebnis/.github/releases/tag/1.4.0
 [1.4.1]: https://github.com/ergebnis/.github/releases/tag/1.4.1
 [1.5.0]: https://github.com/ergebnis/.github/releases/tag/1.5.0
+[1.5.1]: https://github.com/ergebnis/.github/releases/tag/1.5.1
 
 [ca7f15d...1.0.0]: https://github.com/ergebnis/.github/compare/ca7f15d...1.0.0
 [1.0.0...1.1.0]: https://github.com/ergebnis/.github/compare/1.0.0...1.1.0
@@ -115,7 +124,8 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [1.3.2...1.4.0]: https://github.com/ergebnis/.github/compare/1.3.2...1.4.0
 [1.4.0...1.4.1]: https://github.com/ergebnis/.github/compare/1.4.0...1.4.1
 [1.4.1...1.5.0]: https://github.com/ergebnis/.github/compare/1.4.1...1.5.0
-[1.5.0...main]: https://github.com/ergebnis/.github/compare/1.5.0...main
+[1.5.0...1.5.1]: https://github.com/ergebnis/.github/compare/1.5.0...1.5.1
+[1.5.0...main]: https://github.com/ergebnis/.github/compare/1.5.1...main
 
 [#47]: https://github.com/ergebnis/.github/pull/47
 [#48]: https://github.com/ergebnis/.github/pull/48
@@ -132,5 +142,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#80]: https://github.com/ergebnis/.github/pull/80
 [#82]: https://github.com/ergebnis/.github/pull/82
 [#87]: https://github.com/ergebnis/.github/pull/87
+[#96]: https://github.com/ergebnis/.github/pull/96
 
 [@localheinz]: https://github.com/localheinz
