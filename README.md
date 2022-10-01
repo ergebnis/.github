@@ -22,6 +22,8 @@ This repository provides the following composite actions:
 - [`ergebnis/.github/actions/github/pull-request/merge`](#github-pull-request-merge)
 - [`ergebnis/.github/actions/github/pull-request/request-review`](#github-pull-request-review)
 - [`ergebnis/.github/actions/github/release/create`](#github-release-create)
+- [`ergebnis/.github/actions/oh-dear/maintenance-period/start`](#oh-dear-maintenance-period-start)
+- [`ergebnis/.github/actions/oh-dear/maintenance-period/stop`](#oh-dear-maintenance-period-stop)
 
 ### <a name="composer-determine-cache-directory"> `ergebnis/.github/actions/composer/determine-cache-directory`
 
@@ -513,6 +515,98 @@ none
 #### Side Effects
 
 A release is created by the user who owns the GitHub token specified with the `github-token` input.
+
+### <a name="oh-dear-maintenance-period-start"> `ergebnis/.github/actions/oh-dear/maintenance-period/start`
+
+This action starts a [maintenance period](https://ohdear.app/docs/general/maintenance-windows) on [Oh Dear!](https://ohdear.app).
+
+```yaml
+name: "Deploy"
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  deploy:
+    name: "Deploy"
+
+    runs-on: "ubuntu-latest"
+
+    steps:
+    - name: "Checkout"
+      uses: "actions/checkout@v3.0.2"
+      with:
+          fetch-depth: 50
+
+    - name: "Start maintenance period on ohdear.app"
+      uses: "ergebnis/.github/actions/oh-dear/maintenance-period/start@1.5.1"
+      with:
+        oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
+        oh-dear-site-id: "${{ secrets.OH_DEAR_SITE_ID }}"
+```
+
+For details, see [`actions/oh-dear/maintenance-period/start/action.yaml`](actions/oh-dear/maintenance-period/start/action.yaml).
+
+#### Inputs
+
+- `oh-dear-api-token`, required: The Oh Dear API token of a user with permission to start a maintenance period
+- `oh-dear-site-id`, required: Site identifer of an Oh Dear site for which to start a maintenance period
+
+#### Outputs
+
+none
+
+#### Side Effects
+
+A maintenance period is started by the user who owns the Oh Dear API token specified with the `oh-dear-api-token` input for the site identified by the `oh-dear-site-id` input.
+
+### <a name="oh-dear-maintenance-period-stop"> `ergebnis/.github/actions/oh-dear/maintenance-period/stop`
+
+This action stops a [maintenance period](https://ohdear.app/docs/general/maintenance-windows) on [Oh Dear!](https://ohdear.app).
+
+```yaml
+name: "Deploy"
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  deploy:
+    name: "Deploy"
+
+    runs-on: "ubuntu-latest"
+
+    steps:
+    - name: "Checkout"
+      uses: "actions/checkout@v3.0.2"
+      with:
+          fetch-depth: 50
+
+    - name: "Stop maintenance period on ohdear.app"
+      uses: "ergebnis/.github/actions/oh-dear/maintenance-period/stop@1.5.1"
+      with:
+        oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
+        oh-dear-site-id: "${{ secrets.OH_DEAR_SITE_ID }}"
+```
+
+For details, see [`actions/oh-dear/maintenance-period/stop/action.yaml`](actions/oh-dear/maintenance-period/stop/action.yaml).
+
+#### Inputs
+
+- `oh-dear-api-token`, required: The Oh Dear API token of a user with permission to stop a maintenance period
+- `oh-dear-site-id`, required: Site identifer of an Oh Dear site for which to stop a maintenance period
+
+#### Outputs
+
+none
+
+#### Side Effects
+
+A maintenance period is stopped by the user who owns the Oh Dear API token specified with the `oh-dear-api-token` input for the site identified by the `oh-dear-site-id` input.
 
 ## Changelog
 

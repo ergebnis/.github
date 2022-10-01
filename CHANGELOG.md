@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.5.1...main`][1.5.1...main].
 
+### Added
+
+- Added composite actions `oh-dear/maintenance-period/start` and `oh-dear/maintenance-period/stop` for starting and stopping maintenance periods on [ohdear.app](https://ohdear.app) ([#123]), by [@localheinz]
+
 ## [`1.5.1`][1.5.1]
 
 For a full diff see [`1.5.0...1.5.1`][1.5.0...1.5.1].
@@ -143,5 +147,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#82]: https://github.com/ergebnis/.github/pull/82
 [#87]: https://github.com/ergebnis/.github/pull/87
 [#96]: https://github.com/ergebnis/.github/pull/96
+[#123]: https://github.com/ergebnis/.github/pull/123
 
 [@localheinz]: https://github.com/localheinz
