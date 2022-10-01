@@ -22,6 +22,7 @@ This repository provides the following composite actions:
 - [`ergebnis/.github/actions/github/pull-request/merge`](#github-pull-request-merge)
 - [`ergebnis/.github/actions/github/pull-request/request-review`](#github-pull-request-review)
 - [`ergebnis/.github/actions/github/release/create`](#github-release-create)
+- [`ergebnis/.github/actions/oh-dear/check/request-run`](#oh-dear-check-request-run)
 - [`ergebnis/.github/actions/oh-dear/maintenance-period/start`](#oh-dear-maintenance-period-start)
 - [`ergebnis/.github/actions/oh-dear/maintenance-period/stop`](#oh-dear-maintenance-period-stop)
 
@@ -515,6 +516,52 @@ none
 #### Side Effects
 
 A release is created by the user who owns the GitHub token specified with the `github-token` input.
+
+### <a name="oh-dear-check-request-run"> `ergebnis/.github/actions/oh-dear/check/request-run`
+
+This action requests a [check](https://ohdear.app/docs/general/checks) run on [Oh Dear!](https://ohdear.app).
+
+```yaml
+name: "Deploy"
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  deploy:
+    name: "Deploy"
+
+    runs-on: "ubuntu-latest"
+
+    steps:
+    - name: "Checkout"
+      uses: "actions/checkout@v3.0.2"
+      with:
+          fetch-depth: 50
+
+    - name: "Request broken links check on ohdear.app"
+      uses: "ergebnis/.github/actions/oh-dear/maintenance-period/start@1.7.0"
+      with:
+        oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
+        oh-dear-check-id: "${{ secrets.OH_DEAR_BROKEN_LINKS_CHECK_ID }}"
+```
+
+For details, see [`actions/oh-dear/check/request-run/action.yaml`](actions/oh-dear/check/request-run/action.yaml).
+
+#### Inputs
+
+- `oh-dear-api-token`, required: The Oh Dear API token of a user with permission to request a check run
+- `oh-dear-check-id`, required: Check identifer of an Oh Dear check for which to request a run
+
+#### Outputs
+
+none
+
+#### Side Effects
+
+A check run is requested by the user who owns the Oh Dear API token specified with the `oh-dear-api-token` input for the check identified by the `oh-dear-check-id` input.
 
 ### <a name="oh-dear-maintenance-period-start"> `ergebnis/.github/actions/oh-dear/maintenance-period/start`
 
