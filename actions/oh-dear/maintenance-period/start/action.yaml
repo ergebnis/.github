@@ -1,0 +1,28 @@
+# https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-run-steps-actions
+# https://ohdear.app/docs/integrations/api/maintenance-windows#creating-a-new-maintenance-period-on-demand
+
+name: "Starts maintenance period"
+
+description: "Starts maintenance period"
+
+inputs:
+  oh-dear-api-token:
+    description: "Oh Dear API token of a user with permission to start maintenance period"
+    required: true
+  oh-dear-site-id:
+    description: "Site identifer of an Oh Dear site for which to start a maintenance period"
+    required: true
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: "Start maintenance period on ohdear.app"
+      run: |
+        curl -X POST https://ohdear.app/api/sites/${{ inputs.oh-dear-site-id }}/start-maintenance \
+          -H "Authorization: Bearer ${{ inputs.oh-dear-api-token }}" \
+          -H "Accept: application/json" \
+          -H "Content-Type: application/json"
+      shell: "bash"
