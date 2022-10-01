@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.6.0...main`][1.6.0...main].
 
+### Added
+
+- Added composite actions `oh-dear/check/request-run` for requesting a check run on [ohdear.app](https://ohdear.app) ([#124]), by [@localheinz]
+
 ## [`1.6.0`][1.6.0]
 
 For a full diff see [`1.5.1...1.6.0`][1.5.1...1.6.0].
@@ -154,5 +158,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#87]: https://github.com/ergebnis/.github/pull/87
 [#96]: https://github.com/ergebnis/.github/pull/96
 [#123]: https://github.com/ergebnis/.github/pull/123
+[#124]: https://github.com/ergebnis/.github/pull/124
 
 [@localheinz]: https://github.com/localheinz

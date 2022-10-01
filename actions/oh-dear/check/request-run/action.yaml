@@ -1,0 +1,28 @@
+# https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-run-steps-actions
+# https://ohdear.app/docs/integrations/api/checks#enable-amp-disable-a-check
+
+name: "Request a check run"
+
+description: "Request a check run"
+
+inputs:
+  oh-dear-api-token:
+    description: "Oh Dear API token of a user with permission to request a check run"
+    required: true
+  oh-dear-check-id:
+    description: "Check identifer of an Oh Dear check for which to request a run"
+    required: true
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: "Request a check run on ohdear.app"
+      run: |
+        curl -X POST "https://ohdear.app/api/checks/${{ inputs.oh-dear-check-id }}/request-run" \
+          -H "Authorization: Bearer ${{ inputs.oh-dear-api-token }}" \
+          -H "Accept: application/json" \
+          -H "Content-Type: application/json"
+      shell: "bash"
