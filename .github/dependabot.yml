@@ -79,3 +79,36 @@ updates:
     package-ecosystem: "github-actions"
     schedule:
       interval: "daily"
+
+  - commit-message:
+      include: "scope"
+      prefix: "github-actions"
+    directory: "/actions/oh-dear/check/request-run"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "daily"
+
+  - commit-message:
+      include: "scope"
+      prefix: "github-actions"
+    directory: "/actions/oh-dear/maintenance-period/start"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "daily"
+
+  - commit-message:
+      include: "scope"
+      prefix: "github-actions"
+    directory: "/actions/oh-dear/maintenance-period/stop"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "daily"
