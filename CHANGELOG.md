@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.7.0...main`][1.7.0...main].
 
+### Added
+
+- Added composite action `phive/install` for installing dependencies with [`phive`](https://phar.io) ([#142]), by [@localheinz]
+
 ## [`1.7.0`][1.7.0]
 
 For a full diff see [`1.6.0...1.7.0`][1.6.0...1.7.0].
@@ -164,5 +168,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#96]: https://github.com/ergebnis/.github/pull/96
 [#123]: https://github.com/ergebnis/.github/pull/123
 [#124]: https://github.com/ergebnis/.github/pull/124
+[#142]: https://github.com/ergebnis/.github/pull/142
 
 [@localheinz]: https://github.com/localheinz

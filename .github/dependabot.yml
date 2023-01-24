@@ -112,3 +112,14 @@ updates:
     package-ecosystem: "github-actions"
     schedule:
       interval: "daily"
+
+  - commit-message:
+      include: "scope"
+      prefix: "github-actions"
+    directory: "/actions/phive/install"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "daily"
