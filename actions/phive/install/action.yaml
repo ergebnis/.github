@@ -1,0 +1,39 @@
+# https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-run-steps-actions
+# https://phar.io
+
+name: "Install dependencies with phive"
+
+description: "Installs dependencies with phive"
+
+inputs:
+  phive-home:
+    default: ".build/phive"
+    description: "Which directory to use as PHIVE_HOME directory"
+    required: false
+  trust-gpg-keys:
+    default: ""
+    description: "A comma-separated list of trusted GPG keys"
+    required: true
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: "Create phive home directory"
+      run: "mkdir -p ${{ inputs.phive-home }}"
+      shell: "bash"
+
+    - name: "Cache dependencies installed with phive"
+      uses: "actions/cache@v3.2.3"
+      with:
+        path: "${{ inputs.phive-home }}"
+        key: "phive-hashFiles('**/phars.xml')"
+        restore-keys: "phive-"
+
+    - name: "Install dependencies with phive"
+      env:
+        PHIVE_HOME: "${{ inputs.phive-home }}"
+      run: "phive install --trust-gpg-keys ${{ inputs.trust-gpg-keys }}"
+      shell: "bash"
