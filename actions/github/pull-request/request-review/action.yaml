@@ -22,7 +22,7 @@ runs:
 
   steps:
     - name: "Determine pull request number"
-      uses: "actions/github-script@v6.3.3"
+      uses: "actions/github-script@v6.4.0"
       with:
         github-token: "${{ inputs.github-token }}"
         script: |
@@ -44,7 +44,7 @@ runs:
           core.setFailed(`Unable to determine the pull request number for event "${context.eventName}"`);
 
     - name: "Request reviewer"
-      uses: "actions/github-script@v6.3.3"
+      uses: "actions/github-script@v6.4.0"
       env:
         REVIEWER: "${{ inputs.reviewer }}"
       with:
