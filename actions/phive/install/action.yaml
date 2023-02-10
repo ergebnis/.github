@@ -26,7 +26,7 @@ runs:
       shell: "bash"
 
     - name: "Cache dependencies installed with phive"
-      uses: "actions/cache@v3.2.4"
+      uses: "actions/cache@v3.2.5"
       with:
         path: "${{ inputs.phive-home }}"
         key: "phive-hashFiles('**/phars.xml')"
