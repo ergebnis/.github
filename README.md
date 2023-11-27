@@ -73,7 +73,7 @@ For details, see [`actions/composer/determine-cache-directory/action.yaml`](acti
 
 #### Inputs
 
-- `working-directory`, optional: The working directory to use. Defaults to `"'"."`.
+- `working-directory`, optional: The working directory to use. Defaults to `"."`.
 
 #### Outputs
 
