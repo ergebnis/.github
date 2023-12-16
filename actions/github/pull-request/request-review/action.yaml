@@ -1,7 +1,7 @@
 # https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-run-steps-actions
-# https://docs.github.com/en/rest/reference/pulls#request-reviewers-for-a-pull-request
+# https://docs.github.com/en/rest/pulls/review-requests#request-reviewers-for-a-pull-request
 # https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
 # https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#workflow_run
 

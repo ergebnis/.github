@@ -1,7 +1,7 @@
 # https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-run-steps-actions
-# https://docs.github.com/en/rest/reference/releases#create-a-release
+# https://docs.github.com/en/rest/releases/releases#create-a-release
 # https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#push
 
 name: "Create a release"
