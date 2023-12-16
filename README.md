@@ -131,17 +131,17 @@ none
 
 #### Side Effects
 
-The `COMPOSER_ROOT_VERSION` environment variable contains the root version if it has been defined as `branch-alias` in `composer.json`.
+- The `COMPOSER_ROOT_VERSION` environment variable contains the root version if it has been defined as `branch-alias` in `composer.json`.
 
-```json
-{
-  "extra": {
-    "branch-alias": {
-      "dev-main": "10.0-dev"
+  ```json
+  {
+    "extra": {
+      "branch-alias": {
+        "dev-main": "10.0-dev"
+      }
     }
   }
-}
-```
+  ```
 
 ### <a name="composer-install"> `ergebnis/.github/actions/composer/install`
 
@@ -208,22 +208,22 @@ none
 
 #### Side Effects
 
-When `dependencies` is set to `"lowest"`, dependencies are installed in the directory specified by `working-directory` with
+- When `dependencies` is set to `"lowest"`, dependencies are installed in the directory specified by `working-directory` with
 
-```shell
-composer update --ansi --no-interaction --no-progress --prefer-lowest
-````
-When `dependencies` is set to `"locked"`, dependencies are installed in the directory specified by `working-directory` with
+  ```shell
+  composer update --ansi --no-interaction --no-progress --prefer-lowest
+  ````
+- When `dependencies` is set to `"locked"`, dependencies are installed in the directory specified by `working-directory` with
 
-```shell
-composer install --ansi --no-interaction --no-progress
-```
+  ```shell
+  composer install --ansi --no-interaction --no-progress
+  ```
 
-When `dependencies` is set to `"highest"`, dependencies are installed in the directory specified by `working-directory` with
+- When `dependencies` is set to `"highest"`, dependencies are installed in the directory specified by `working-directory` with
 
-```shell
-composer update --ansi --no-interaction --no-progress
-````
+  ```shell
+  composer update --ansi --no-interaction --no-progress
+  ````
 
 ### <a name="github-pull-request-add-assignee"> `ergebnis/.github/actions/github/pull-request/add-assignee`
 
@@ -276,7 +276,8 @@ none
 
 #### Side Effects
 
-The GitHub user with the username specified in the `assignee` input is assigned to the pull request.
+- The GitHub user with the username specified in the `assignee` input is assigned to the pull request.
+- The `PULL_REQUEST_NUMBER` environment variable contains the number of the pull request.
 
 ### <a name="github-pull-request-add-label-based-on-branch-name"> `ergebnis/.github/actions/github/pull-request/add-label-based-on-branch-name`
 
@@ -319,6 +320,8 @@ none
 
 - When the branch name starts with `feature/`, the label `enhancement` is added to the pull request by the user who owns the GitHub token specified with the `github-token` input.
 - When the branch name starts with `fix/`, the label `bug` is added to the pull request by the user who owns the GitHub token specified with the `github-token` input.
+- The `PULL_REQUEST_BRANCH_NAME` environment variable contains the name of the head branch of the pull request.
+- The `PULL_REQUEST_NUMBER` environment variable contains the number of the pull request.
 
 ### <a name="github-pull-request-approve"> `ergebnis/.github/actions/github/pull-request/approve`
 
@@ -369,7 +372,8 @@ none
 
 #### Side Effects
 
-The pull request is approved by the user who owns the GitHub token specified with the `github-token` input.
+- The pull request is approved by the user who owns the GitHub token specified with the `github-token` input.
+- The `PULL_REQUEST_NUMBER` environment variable contains the number of the pull request.
 
 ### <a name="github-pull-request-merge"> `ergebnis/.github/actions/github/pull-request/merge`
 
@@ -421,7 +425,8 @@ none
 
 #### Side Effects
 
-The pull request is merged by the user who owns the GitHub token specified with the `github-token` input.
+- The pull request is merged by the user who owns the GitHub token specified with the `github-token` input.
+- The `PULL_REQUEST_NUMBER` environment variable contains the number of the pull request.
 
 ### <a name="github-pull-request-request-review"> `ergebnis/.github/actions/github/pull-request/request-review`
 
@@ -474,7 +479,8 @@ none
 
 #### Side Effects
 
-A pull request review is requested for the user identified by the value of the `reviewer` input by the user who owns the GitHub token specified with the `github-token` input.
+- A pull request review is requested for the user identified by the value of the `reviewer` input by the user who owns the GitHub token specified with the `github-token` input.
+- The `PULL_REQUEST_NUMBER` environment variable contains the number of the pull request.
 
 ### <a name="github-release-create"> `ergebnis/.github/actions/github/release/create`
 
@@ -516,7 +522,11 @@ none
 
 #### Side Effects
 
-A release is created by the user who owns the GitHub token specified with the `github-token` input.
+- A release is created by the user who owns the GitHub token specified with the `github-token` input.
+- The `RELEASE_HTML_URL` environment variable contains the HTML URL to the release.
+- The `RELEASE_ID` environment variable contains the release identifier.
+- The `RELEASE_TAG` environment variable contains the release tag.
+- The `RELEASE_UPLOAD_URL` environment variable contains the URL for uploading release assets.
 
 ### <a name="oh-dear-check-request-run"> `ergebnis/.github/actions/oh-dear/check/request-run`
 
@@ -562,7 +572,7 @@ none
 
 #### Side Effects
 
-A check run is requested by the user who owns the Oh Dear API token specified with the `oh-dear-api-token` input for the check identified by the `oh-dear-check-id` input.
+- A check run is requested by the user who owns the Oh Dear API token specified with the `oh-dear-api-token` input for the check identified by the `oh-dear-check-id` input.
 
 ### <a name="oh-dear-maintenance-period-start"> `ergebnis/.github/actions/oh-dear/maintenance-period/start`
 
@@ -608,7 +618,7 @@ none
 
 #### Side Effects
 
-A maintenance period is started by the user who owns the Oh Dear API token specified with the `oh-dear-api-token` input for the site identified by the `oh-dear-site-id` input.
+- A maintenance period is started by the user who owns the Oh Dear API token specified with the `oh-dear-api-token` input for the site identified by the `oh-dear-site-id` input.
 
 ### <a name="oh-dear-maintenance-period-stop"> `ergebnis/.github/actions/oh-dear/maintenance-period/stop`
 
@@ -654,7 +664,7 @@ none
 
 #### Side Effects
 
-A maintenance period is stopped by the user who owns the Oh Dear API token specified with the `oh-dear-api-token` input for the site identified by the `oh-dear-site-id` input.
+- A maintenance period is stopped by the user who owns the Oh Dear API token specified with the `oh-dear-api-token` input for the site identified by the `oh-dear-site-id` input.
 
 ### <a name="phive-install"> `ergebnis/.github/actions/phive/install`
 
@@ -705,11 +715,7 @@ none
 
 #### Side Effects
 
-Dependencies are installed, assuming
-
-- `phive` is available
-- `phive` could find a `phars.xml`
-- keys presented by packages are listed using the `trust-gpg-keys` option
+- Given that `phive` is available, `phive` could find a `phars.xml`, and keys presented by packages are listed using the `trust-gpg-keys` option, dependencies are installed with `phive`.
 
 The directory configured by the `phive-home` directory is cached using [`actions/cache`](https://github.com/actions/cache).
 
