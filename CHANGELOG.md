@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.8.0...main`][1.8.0...main].
 
+### Changed
+
+- Started exposing a `RELEASE_HTML_URL` environment variable after creating a release with `actions/github/release/create` ([#183]), by [@localheinz]
+
 ## [`1.8.0`][1.8.0]
 
 For a full diff see [`1.7.0...1.8.0`][1.7.0...1.8.0].
@@ -176,5 +180,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#123]: https://github.com/ergebnis/.github/pull/123
 [#124]: https://github.com/ergebnis/.github/pull/124
 [#142]: https://github.com/ergebnis/.github/pull/142
+[#183]: https://github.com/ergebnis/.github/pull/183
 
 [@localheinz]: https://github.com/localheinz
