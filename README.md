@@ -480,7 +480,7 @@ A pull request review is requested for the user identified by the value of the `
 
 This action creates a release.
 
-This is usefull when you automatically want to create releases with [automatically generated release notes](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes).
+This is useful when you automatically want to create releases with [automatically generated release notes](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes).
 
 ```yaml
 
