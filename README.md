@@ -1,17 +1,14 @@
 # .github
 
-[![Integrate](https://github.com/ergebnis/.github/workflows/Integrate/badge.svg?branch=main)](https://github.com/ergebnis/.github/actions)
-[![Merge](https://github.com/ergebnis/.github/workflows/Merge/badge.svg?branch=main)](https://github.com/ergebnis/.github/actions)
-[![Release](https://github.com/ergebnis/.github/workflows/Release/badge.svg?branch=main)](https://github.com/ergebnis/.github/actions)
-[![Triage](https://github.com/ergebnis/.github/workflows/Triage/badge.svg?branch=main)](https://github.com/ergebnis/.github/actions)
+[![Integrate](https://github.com/ergebnis/.github/workflows/Integrate/badge.svg)](https://github.com/ergebnis/.github/actions)
+[![Merge](https://github.com/ergebnis/.github/workflows/Merge/badge.svg)](https://github.com/ergebnis/.github/actions)
+[![Release](https://github.com/ergebnis/.github/workflows/Release/badge.svg)](https://github.com/ergebnis/.github/actions)
 
-Provides community health files for the [@ergebnis](https://github.com/ergebnis) organization.
-
-:bulb: Also see [GitHub Docs: Creating a default community health file](https://docs.github.com/en/github/building-a-strong-community/creating-a-default-community-health-file).
+This project provides [community health files](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file) and [composite actions](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action) for the [@ergebnis](https://github.com/ergebnis) organization.
 
 ## Composite Actions
 
-This repository provides the following composite actions:
+This project provides the following composite actions:
 
 - [`ergebnis/.github/actions/composer/determine-cache-directory`](#composer-determine-cache-directory)
 - [`ergebnis/.github/actions/composer/determine-root-version`](#composer-determine-root-version)
@@ -721,16 +718,30 @@ The directory configured by the `phive-home` directory is cached using [`actions
 
 ## Changelog
 
-Please have a look at [`CHANGELOG.md`](CHANGELOG.md).
+The maintainers of this project record notable changes to this project in a [changelog](CHANGELOG.md).
 
 ## Contributing
 
-Please have a look at [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
+The maintainers of this project suggest following the [contribution guide](.github/CONTRIBUTING.md).
 
 ## Code of Conduct
 
-Please have a look at [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
+The maintainers of this project ask contributors to follow the [code of conduct](CODE_OF_CONDUCT.md).
 
-## Curious what I am building?
+## General Support Policy
 
-:mailbox_with_mail: [Subscribe to my list](https://localheinz.com/projects/), and I will occasionally send you an email to let you know what I am working on.
+The maintainers of this project provide limited support.
+
+You can support the maintenance of this project by [sponsoring @localheinz](https://github.com/sponsors/localheinz) or [requesting an invoice for services related to this project](mailto:am@localheinz.com?subject=ergebnis/.github:%20Requesting%20invoice%20for%20services).
+
+## Security Policy
+
+This project has a [security policy](.github/SECURITY.md).
+
+## License
+
+This project uses the [MIT license](LICENSE.md).
+
+## Social
+
+Follow [@localheinz](https://twitter.com/intent/follow?screen_name=localheinz) and [@ergebnis](https://twitter.com/intent/follow?screen_name=ergebnis) on Twitter.
