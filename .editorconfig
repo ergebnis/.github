@@ -7,6 +7,9 @@ indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+[*.md]
+indent_size = 2
+
 [*.{yaml,yml}]
 indent_size = 2
 
