@@ -1,6 +1,6 @@
 # CONTRIBUTING
 
-We are using [GitHub Actions](https://github.com/features/actions) as a continuous integration system.
+We use [GitHub Actions](https://github.com/features/actions) as a continuous integration system.
 
 For details, take a look at the following workflow configuration files:
 
@@ -10,12 +10,12 @@ For details, take a look at the following workflow configuration files:
 
 ## Coding Standards
 
-We are using [`yamllint`](https://github.com/adrienverge/yamllint) to enforce coding standards in YAML files.
+We use [`yamllint`](https://github.com/adrienverge/yamllint) to enforce coding standards in YAML files.
 
 If you do not have `yamllint` installed yet, run
 
 ```sh
-$ brew install yamllint
+brew install yamllint
 ```
 
 to install `yamllint`.
@@ -23,7 +23,7 @@ to install `yamllint`.
 Run
 
 ```sh
-$ make coding-standards
+make coding-standards
 ```
 
 to detect coding standard violations.
@@ -33,7 +33,7 @@ to detect coding standard violations.
 Run
 
 ```sh
-$ make
+make
 ```
 
 to detect coding standard violations!
@@ -43,7 +43,7 @@ to detect coding standard violations!
 :bulb: Run
 
 ```sh
-$ make help
+make help
 ```
 
 to display a list of available targets with corresponding descriptions.
