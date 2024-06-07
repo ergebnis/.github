@@ -29,7 +29,7 @@ runs:
       uses: "actions/cache@v4.0.2"
       with:
         path: "${{ inputs.phive-home }}"
-        key: "phive-hashFiles('**/phars.xml')"
+        key: "phive-${{ hashFiles('**/phars.xml') }}"
         restore-keys: "phive-"
 
     - name: "Install dependencies with phive"
