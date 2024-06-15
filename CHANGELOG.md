@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.9.1...main`][1.9.1...main].
 
+### Fixed
+
+- Expose `PULL_REQUEST_BRANCH_NAME` instead of overwriting `PULL_REQUEST_NUMBER` environment variable when adding label based on branch name ([#194]), by [@jaymecd]
+
 ## [`1.9.1`][1.9.1]
 
 For a full diff see [`1.9.0...1.9.1`][1.9.0...1.9.1].
@@ -197,7 +201,9 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#124]: https://github.com/ergebnis/.github/pull/124
 [#142]: https://github.com/ergebnis/.github/pull/142
 [#183]: https://github.com/ergebnis/.github/pull/183
+[#194]: https://github.com/ergebnis/.github/pull/194
 [#197]: https://github.com/ergebnis/.github/pull/197
 
+[@jaymecd]: https://github.com/jaymecd
 [@localheinz]: https://github.com/localheinz
 [@lotyp]: https://github.com/lotyp
