@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.9.2...main`][1.9.2...main].
 
+### Fixed
+
+- Updated `actions/cache` ([#207], [#208], [#209]), by [@dependabot]
+
 ## [`1.9.2`][1.9.2]
 
 For a full diff see [`1.9.1...1.9.2`][1.9.1...1.9.2].
@@ -209,7 +213,11 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#183]: https://github.com/ergebnis/.github/pull/183
 [#194]: https://github.com/ergebnis/.github/pull/194
 [#197]: https://github.com/ergebnis/.github/pull/197
+[#207]: https://github.com/ergebnis/.github/pull/207
+[#208]: https://github.com/ergebnis/.github/pull/208
+[#209]: https://github.com/ergebnis/.github/pull/209
 
+[@dependabot]: https://github.com/dependabot
 [@jaymecd]: https://github.com/jaymecd
 [@localheinz]: https://github.com/localheinz
 [@lotyp]: https://github.com/lotyp
