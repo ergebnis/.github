@@ -10,7 +10,7 @@ For a full diff see [`1.9.3...main`][1.9.3...main].
 
 ### Changed
 
-- Adjusted `github/release/create` to allow creating releases in draft mode ([#214]), by [@localheinz]
+- Added a `draft` input to `github/release/create` to allow creating releases in draft mode ([#214]), by [@localheinz]
 
 ## [`1.9.3`][1.9.3]
 
