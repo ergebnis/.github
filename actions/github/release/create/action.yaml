@@ -9,6 +9,10 @@ name: "Create a release"
 description: "Creates a release"
 
 inputs:
+  draft:
+    description: "Whether to create a draft or a published release"
+    required: false
+    default: "false"
   github-token:
     description: "GitHub token of a user with permission to create a release"
     required: true
@@ -35,7 +39,7 @@ runs:
 
           try {
             const response = await github.rest.repos.createRelease({
-              draft: false,
+              draft: ${{ fromJSON(inputs.draft) }},
               generate_release_notes: true,
               name: process.env.RELEASE_TAG,
               owner: context.repo.owner,
