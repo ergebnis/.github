@@ -19,6 +19,7 @@ This project provides the following composite actions:
 - [`ergebnis/.github/actions/github/pull-request/merge`](#github-pull-request-merge)
 - [`ergebnis/.github/actions/github/pull-request/request-review`](#github-pull-request-review)
 - [`ergebnis/.github/actions/github/release/create`](#github-release-create)
+- [`ergebnis/.github/actions/github/release/publish`](#github-release-publish)
 - [`ergebnis/.github/actions/oh-dear/check/request-run`](#oh-dear-check-request-run)
 - [`ergebnis/.github/actions/oh-dear/maintenance-period/start`](#oh-dear-maintenance-period-start)
 - [`ergebnis/.github/actions/oh-dear/maintenance-period/stop`](#oh-dear-maintenance-period-stop)
