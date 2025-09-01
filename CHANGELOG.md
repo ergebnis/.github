@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.9.3...main`][1.9.3...main].
 
+### Changed
+
+- Adjusted `github/release/create` to allow creating releases in draft mode ([#214]), by [@localheinz]
+
 ## [`1.9.3`][1.9.3]
 
 For a full diff see [`1.9.2...1.9.3`][1.9.2...1.9.3].
@@ -222,6 +226,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#207]: https://github.com/ergebnis/.github/pull/207
 [#208]: https://github.com/ergebnis/.github/pull/208
 [#209]: https://github.com/ergebnis/.github/pull/209
+[#214]: https://github.com/ergebnis/.github/pull/214
 
 [@dependabot]: https://github.com/dependabot
 [@jaymecd]: https://github.com/jaymecd
