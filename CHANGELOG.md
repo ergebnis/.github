@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.10.0...main`][1.10.0...main].
 
+### Added
+
+- Added a `prerelease` input to `github/release/create` to allow creating prereleases ([#224]), by [@ellisvalentiner]
+
 ### Changed
 
 - Started exposing a `RELEASE_HTML_URL` environment variable after publishing a release with `actions/github/release/publish` ([#183]), by [@localheinz]
@@ -242,8 +246,10 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#209]: https://github.com/ergebnis/.github/pull/209
 [#214]: https://github.com/ergebnis/.github/pull/214
 [#215]: https://github.com/ergebnis/.github/pull/215
+[#224]: https://github.com/ergebnis/.github/pull/224
 
 [@dependabot]: https://github.com/dependabot
+[@ellisvalentiner]: https://github.com/ellisvalentiner
 [@jaymecd]: https://github.com/jaymecd
 [@localheinz]: https://github.com/localheinz
 [@lotyp]: https://github.com/lotyp
