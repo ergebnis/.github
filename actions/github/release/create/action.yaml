@@ -13,6 +13,10 @@ inputs:
     description: "Whether to create a draft or a published release"
     required: false
     default: "false"
+  prerelease:
+    description: "Whether to identify the release as a prerelease (true) or full release (false)"
+    required: false
+    default: "false"
   github-token:
     description: "GitHub token of a user with permission to create a release"
     required: true
@@ -43,7 +47,7 @@ runs:
               generate_release_notes: true,
               name: process.env.RELEASE_TAG,
               owner: context.repo.owner,
-              prerelease: false,
+              prerelease: ${{ fromJSON(inputs.prerelease) }},
               repo: context.repo.repo,
               tag_name: process.env.RELEASE_TAG,
             });
