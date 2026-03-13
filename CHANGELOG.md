@@ -6,7 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`1.9.3...main`][1.9.3...main].
+For a full diff see [`1.10.0...main`][1.10.0...main].
+
+## [`1.10.0`][1.10.0]
+
+For a full diff see [`1.9.3...1.10.0`][1.9.3...1.10.0].
 
 ### Added
 
@@ -203,7 +207,8 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [1.9.0...1.9.1]: https://github.com/ergebnis/.github/compare/1.9.0...1.9.1
 [1.9.1...1.9.2]: https://github.com/ergebnis/.github/compare/1.9.1...1.9.2
 [1.9.2...1.9.3]: https://github.com/ergebnis/.github/compare/1.9.2...1.9.3
-[1.9.3...main]: https://github.com/ergebnis/.github/compare/1.9.3...main
+[1.9.3...1.10.0]: https://github.com/ergebnis/.github/compare/1.9.3...1.10.0
+[1.10.0...main]: https://github.com/ergebnis/.github/compare/1.10.0...main
 
 [#47]: https://github.com/ergebnis/.github/pull/47
 [#48]: https://github.com/ergebnis/.github/pull/48
