@@ -514,6 +514,7 @@ For details, see [`actions/github/release/create/action.yaml`](actions/github/re
 
 - `draft`, optional: Whether to create a draft or a published release.
 - `github-token`, required: The GitHub token of a user with permission to create a release.
+- `prerelease`, optional: Whether to identify the release as a prerelease or a full release.
 
 #### Outputs
 
