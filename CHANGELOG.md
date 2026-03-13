@@ -188,6 +188,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [1.9.1]: https://github.com/ergebnis/.github/releases/tag/1.9.1
 [1.9.2]: https://github.com/ergebnis/.github/releases/tag/1.9.2
 [1.9.3]: https://github.com/ergebnis/.github/releases/tag/1.9.3
+[1.10.0]: https://github.com/ergebnis/.github/releases/tag/1.10.0
 
 [ca7f15d...1.0.0]: https://github.com/ergebnis/.github/compare/ca7f15d...1.0.0
 [1.0.0...1.1.0]: https://github.com/ergebnis/.github/compare/1.0.0...1.1.0
