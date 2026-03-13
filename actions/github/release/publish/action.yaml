@@ -32,6 +32,8 @@ runs:
               release_id: ${{ inputs.release-id }},
               repo: context.repo.repo,
             });
+
+            core.exportVariable('RELEASE_HTML_URL', response.data.html_url);
           } catch (error) {
             core.setFailed(error.message);
           }

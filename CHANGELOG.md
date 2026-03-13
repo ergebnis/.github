@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.10.0...main`][1.10.0...main].
 
+### Changed
+
+- Started exposing a `RELEASE_HTML_URL` environment variable after publishing a release with `actions/github/release/publish` ([#183]), by [@localheinz]
+
 ## [`1.10.0`][1.10.0]
 
 For a full diff see [`1.9.3...1.10.0`][1.9.3...1.10.0].

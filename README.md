@@ -570,6 +570,7 @@ none
 #### Side Effects
 
 - The release identified by the release identifier is published by the user who owns the GitHub token specified with the `github-token` input.
+- The `RELEASE_HTML_URL` environment variable contains the HTML URL to the published release.
 
 ### <a name="oh-dear-check-request-run"> `ergebnis/.github/actions/oh-dear/check/request-run`
 
