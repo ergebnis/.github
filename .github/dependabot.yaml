@@ -6,6 +6,8 @@ updates:
   - commit-message:
       include: "scope"
       prefix: "github-actions"
+    cooldown:
+      default-days: 7
     directory: "/"
     labels:
       - "dependency"
@@ -17,6 +19,8 @@ updates:
   - commit-message:
       include: "scope"
       prefix: "github-actions"
+    cooldown:
+      default-days: 7
     directory: "/actions/github/pull-request/add-assignee"
     labels:
       - "dependency"
@@ -28,6 +32,8 @@ updates:
   - commit-message:
       include: "scope"
       prefix: "github-actions"
+    cooldown:
+      default-days: 7
     directory: "/actions/github/pull-request/add-label-based-on-branch-name"
     labels:
       - "dependency"
@@ -39,6 +45,8 @@ updates:
   - commit-message:
       include: "scope"
       prefix: "github-actions"
+    cooldown:
+      default-days: 7
     directory: "/actions/github/pull-request/approve"
     labels:
       - "dependency"
@@ -50,6 +58,8 @@ updates:
   - commit-message:
       include: "scope"
       prefix: "github-actions"
+    cooldown:
+      default-days: 7
     directory: "/actions/github/pull-request/merge"
     labels:
       - "dependency"
@@ -61,6 +71,8 @@ updates:
   - commit-message:
       include: "scope"
       prefix: "github-actions"
+    cooldown:
+      default-days: 7
     directory: "/actions/github/pull-request/request-review"
     labels:
       - "dependency"
@@ -72,6 +84,8 @@ updates:
   - commit-message:
       include: "scope"
       prefix: "github-actions"
+    cooldown:
+      default-days: 7
     directory: "/actions/github/release/create"
     labels:
       - "dependency"
@@ -83,6 +97,8 @@ updates:
   - commit-message:
       include: "scope"
       prefix: "github-actions"
+    cooldown:
+      default-days: 7
     directory: "/actions/oh-dear/check/request-run"
     labels:
       - "dependency"
@@ -94,6 +110,8 @@ updates:
   - commit-message:
       include: "scope"
       prefix: "github-actions"
+    cooldown:
+      default-days: 7
     directory: "/actions/oh-dear/maintenance-period/start"
     labels:
       - "dependency"
@@ -105,6 +123,8 @@ updates:
   - commit-message:
       include: "scope"
       prefix: "github-actions"
+    cooldown:
+      default-days: 7
     directory: "/actions/oh-dear/maintenance-period/stop"
     labels:
       - "dependency"
@@ -116,6 +136,8 @@ updates:
   - commit-message:
       include: "scope"
       prefix: "github-actions"
+    cooldown:
+      default-days: 7
     directory: "/actions/phive/install"
     labels:
       - "dependency"

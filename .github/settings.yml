@@ -15,6 +15,7 @@ branches:
       required_status_checks:
         checks:
           - context: "Coding Standards"
+          - context: "GitHub Actions Analysis"
         strict: false
       restrictions:
 

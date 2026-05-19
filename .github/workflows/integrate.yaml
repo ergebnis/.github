@@ -8,9 +8,14 @@ on: # yamllint disable-line rule:truthy
     branches:
       - "main"
 
+permissions: {}
+
 jobs:
   coding-standards:
     name: "Coding Standards"
+
+    permissions:
+      contents: "read"
 
     runs-on: "ubuntu-latest"
 
@@ -18,11 +23,36 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v6.0.2"
+        uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd" # v6.0.2
+        with:
+          persist-credentials: false
 
       - name: "Lint YAML files"
-        uses: "ibiqlik/action-yamllint@v3.1.1"
+        uses: "ibiqlik/action-yamllint@2576378a8e339169678f9939646ee3ee325e845c" # v3.1.1
         with:
           config_file: ".yamllint.yaml"
           file_or_dir: "."
           strict: true
+
+  github-actions-analysis:
+    name: "GitHub Actions Analysis"
+
+    permissions:
+      contents: "read"
+
+    runs-on: "ubuntu-latest"
+
+    timeout-minutes: 5
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd" # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: "Run zizmorcore/zizmor-action"
+        uses: "zizmorcore/zizmor-action@5f14fd08f7cf1cb1609c1e344975f152c7ee938d" # v0.5.6
+        with:
+          advanced-security: false
+          annotations: true
+          inputs: ".github/"
