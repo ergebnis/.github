@@ -8,9 +8,14 @@ on: # yamllint disable-line rule:truthy
     branches:
       - "main"
 
+permissions: {}
+
 jobs:
   coding-standards:
     name: "Coding Standards"
+
+    permissions:
+      contents: "read"
 
     runs-on: "ubuntu-latest"
 
@@ -29,6 +34,9 @@ jobs:
 
   github-actions-analysis:
     name: "GitHub Actions Analysis"
+
+    permissions:
+      contents: "read"
 
     runs-on: "ubuntu-latest"
 
