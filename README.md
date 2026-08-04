@@ -48,10 +48,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v5.0.0"
+        uses: "actions/checkout@v7.0.1"
 
       - name: "Set up PHP"
-        uses: "shivammathur/setup-php@2.35.4"
+        uses: "shivammathur/setup-php@2.37.2"
         with:
           coverage: "none"
           php-version: "8.1"
@@ -60,7 +60,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.12.0"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v4.2.4"
+        uses: "actions/cache@v6.1.0"
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "composer-${{ hashFiles('composer.lock') }}"
@@ -104,10 +104,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v5.0.0"
+        uses: "actions/checkout@v7.0.1"
 
       - name: "Set up PHP"
-        uses: "shivammathur/setup-php@2.35.4"
+        uses: "shivammathur/setup-php@2.37.2"
         with:
           coverage: "none"
           php-version: "8.1"
@@ -169,10 +169,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v5.0.0"
+        uses: "actions/checkout@v7.0.1"
 
       - name: "Set up PHP"
-        uses: "shivammathur/setup-php@2.35.4"
+        uses: "shivammathur/setup-php@2.37.2"
         with:
           coverage: "none"
           php-version: "8.1"
@@ -181,7 +181,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.12.0"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v4.2.4"
+        uses: "actions/cache@v6.1.0"
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -593,7 +593,7 @@ jobs:
 
     steps:
     - name: "Checkout"
-      uses: "actions/checkout@v5.0.0"
+      uses: "actions/checkout@v7.0.1"
       with:
           fetch-depth: 50
 
@@ -639,7 +639,7 @@ jobs:
 
     steps:
     - name: "Checkout"
-      uses: "actions/checkout@v5.0.0"
+      uses: "actions/checkout@v7.0.1"
       with:
           fetch-depth: 50
 
@@ -685,7 +685,7 @@ jobs:
 
     steps:
     - name: "Checkout"
-      uses: "actions/checkout@v5.0.0"
+      uses: "actions/checkout@v7.0.1"
       with:
           fetch-depth: 50
 
@@ -732,10 +732,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v5.0.0"
+        uses: "actions/checkout@v7.0.1"
 
       - name: "Set up PHP"
-        uses: "shivammathur/setup-php@2.35.4"
+        uses: "shivammathur/setup-php@2.37.2"
         with:
           coverage: "none"
           php-version: "8.1"
