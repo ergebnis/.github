@@ -316,8 +316,8 @@ none
 
 #### Side Effects
 
-- When the branch name starts with `feature/`, the label `enhancement` is added to the pull request by the user who owns the GitHub token specified with the `github-token` input.
-- When the branch name starts with `fix/`, the label `bug` is added to the pull request by the user who owns the GitHub token specified with the `github-token` input.
+- When the branch name starts with `fix/` (or `bug/`), the label `bug` is added to the pull request by the user who owns the GitHub token specified with the `github-token` input.
+- When the branch name starts with `enhancement/` (or `feature/`), the label `enhancement` is added to the pull request by the user who owns the GitHub token specified with the `github-token` input.
 - The `PULL_REQUEST_BRANCH_NAME` environment variable contains the name of the head branch of the pull request.
 - The `PULL_REQUEST_NUMBER` environment variable contains the number of the pull request.
 

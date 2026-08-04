@@ -60,6 +60,8 @@ runs:
           }
 
           const branchPrefixToLabel = {
+            bug: "bug",
+            enhancement: "enhancement",
             feature: "enhancement",
             fix: "bug",
           };
