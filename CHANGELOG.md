@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.11.0...main`][1.11.0...main].
 
+### Added
+
+- Added support for the `bug/` and `enhancement/` branch prefixes to `github/pull-request/add-label-based-on-branch-name` ([#251]), by [@localheinz]
+
 ## [`1.11.0`][1.11.0]
 
 For a full diff see [`1.10.0...1.11.0`][1.10.0...1.11.0].
@@ -253,6 +257,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#214]: https://github.com/ergebnis/.github/pull/214
 [#215]: https://github.com/ergebnis/.github/pull/215
 [#224]: https://github.com/ergebnis/.github/pull/224
+[#251]: https://github.com/ergebnis/.github/pull/251
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
