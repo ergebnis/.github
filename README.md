@@ -415,7 +415,7 @@ For details, see [`actions/github/pull-request/merge/action.yaml`](actions/githu
 #### Inputs
 
 - `github-token`, required: The GitHub token of a user with permission to merge a pull request
-- `merge-method`, option: The merge method to use, one `"merge"`, `"rebase"`, `"squash"`, defaults to `"merge"`
+- `merge-method`, optional: The merge method to use, one of `"merge"`, `"rebase"`, `"squash"`, defaults to `"merge"`
 
 #### Outputs
 

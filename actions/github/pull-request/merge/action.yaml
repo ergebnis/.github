@@ -15,8 +15,8 @@ inputs:
     required: true
   merge-method:
     default: "merge"
-    description: "Which merge method to use, one \"merge\", \"rebase\", \"squash\""
-    required: true
+    description: "Which merge method to use, one of \"merge\", \"rebase\", \"squash\""
+    required: false
 
 runs:
   using: "composite"
