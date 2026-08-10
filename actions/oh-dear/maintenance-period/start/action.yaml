@@ -20,9 +20,14 @@ runs:
 
   steps:
     - name: "Start maintenance period on ohdear.app"
+      env:
+        OH_DEAR_API_TOKEN: "${{ inputs.oh-dear-api-token }}"
+        OH_DEAR_SITE_ID: "${{ inputs.oh-dear-site-id }}"
       run: |
-        curl -X POST https://ohdear.app/api/sites/${{ inputs.oh-dear-site-id }}/start-maintenance \
-          -H "Authorization: Bearer ${{ inputs.oh-dear-api-token }}" \
-          -H "Accept: application/json" \
-          -H "Content-Type: application/json"
+        curl --url "https://ohdear.app/api/sites/${OH_DEAR_SITE_ID}/start-maintenance" \
+          --fail \
+          --header "Accept: application/json" \
+          --header "Authorization: Bearer ${OH_DEAR_API_TOKEN}" \
+          --header "Content-Type: application/json" \
+          --request POST
       shell: "bash"
