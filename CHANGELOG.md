@@ -241,6 +241,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 
 [#47]: https://github.com/ergebnis/.github/pull/47
 [#48]: https://github.com/ergebnis/.github/pull/48
+[#49]: https://github.com/ergebnis/.github/pull/49
 [#52]: https://github.com/ergebnis/.github/pull/52
 [#54]: https://github.com/ergebnis/.github/pull/54
 [#59]: https://github.com/ergebnis/.github/pull/59
