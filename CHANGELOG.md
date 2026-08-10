@@ -17,6 +17,7 @@ For a full diff see [`1.12.0...main`][1.12.0...main].
 - Adjusted `github/pull-request/add-label-based-on-branch-name` to await adding the label ([#253]), by [@localheinz]
 - Adjusted `github/release/create` to skip determining the release tag when the event is not a tag push ([#255]), by [@localheinz]
 - Adjusted `github/release/publish` to pass the release identifier through the environment ([#256]), by [@localheinz]
+- Adjusted `github/pull-request` actions to fail instead of throwing when the pull request cannot be determined for a `workflow_run` event ([#258]), by [@localheinz]
 
 ## [`1.12.0`][1.12.0]
 
@@ -279,6 +280,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#255]: https://github.com/ergebnis/.github/pull/255
 [#256]: https://github.com/ergebnis/.github/pull/256
 [#257]: https://github.com/ergebnis/.github/pull/257
+[#258]: https://github.com/ergebnis/.github/pull/258
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
