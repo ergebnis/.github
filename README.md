@@ -17,7 +17,7 @@ This project provides the following composite actions:
 - [`ergebnis/.github/actions/github/pull-request/add-label-based-on-branch-name`](#github-pull-request-add-label-based-on-branch-name)
 - [`ergebnis/.github/actions/github/pull-request/approve`](#github-pull-request-approve)
 - [`ergebnis/.github/actions/github/pull-request/merge`](#github-pull-request-merge)
-- [`ergebnis/.github/actions/github/pull-request/request-review`](#github-pull-request-review)
+- [`ergebnis/.github/actions/github/pull-request/request-review`](#github-pull-request-request-review)
 - [`ergebnis/.github/actions/github/release/create`](#github-release-create)
 - [`ergebnis/.github/actions/github/release/publish`](#github-release-publish)
 - [`ergebnis/.github/actions/oh-dear/check/request-run`](#oh-dear-check-request-run)
@@ -358,7 +358,7 @@ jobs:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
 ```
 
-For details, see [`actions/github/pull-request/merge/action.yaml`](actions/github/pull-request/merge/action.yaml).
+For details, see [`actions/github/pull-request/approve/action.yaml`](actions/github/pull-request/approve/action.yaml).
 
 #### Inputs
 
