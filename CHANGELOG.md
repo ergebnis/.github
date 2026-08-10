@@ -21,6 +21,7 @@ For a full diff see [`1.12.0...main`][1.12.0...main].
 - Adjusted `github/pull-request/add-label-based-on-branch-name` to handle errors when adding labels ([#259]), by [@localheinz]
 - Adjusted `composer/determine-root-version` to fail when a branch alias has not been defined ([#261]), by [@localheinz]
 - Adjusted `composer/determine-cache-directory` to pass the working directory through the environment and to fail when the cache directory cannot be determined ([#262]), by [@localheinz]
+- Adjusted `phive/install` to pass inputs through the environment ([#263]), by [@localheinz]
 
 ## [`1.12.0`][1.12.0]
 
@@ -287,6 +288,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#259]: https://github.com/ergebnis/.github/pull/259
 [#261]: https://github.com/ergebnis/.github/pull/261
 [#262]: https://github.com/ergebnis/.github/pull/262
+[#263]: https://github.com/ergebnis/.github/pull/263
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
