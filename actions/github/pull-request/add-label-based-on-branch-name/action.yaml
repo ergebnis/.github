@@ -78,7 +78,7 @@ runs:
 
           const label = branchPrefixToLabel[matches[1]];
 
-          github.rest.issues.addLabels({
+          await github.rest.issues.addLabels({
             issue_number: process.env.PULL_REQUEST_NUMBER,
             labels: [
               label,
