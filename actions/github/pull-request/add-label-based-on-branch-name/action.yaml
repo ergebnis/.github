@@ -82,11 +82,15 @@ runs:
 
           const label = branchPrefixToLabel[matches[1]];
 
-          await github.rest.issues.addLabels({
-            issue_number: process.env.PULL_REQUEST_NUMBER,
-            labels: [
-              label,
-            ],
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-          });
+          try {
+            await github.rest.issues.addLabels({
+              issue_number: process.env.PULL_REQUEST_NUMBER,
+              labels: [
+                label,
+              ],
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+          } catch (error) {
+            core.setFailed(error.message);
+          }
