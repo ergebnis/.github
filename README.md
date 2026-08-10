@@ -57,7 +57,7 @@ jobs:
           php-version: "8.1"
 
       - name: "Determine composer cache directory"
-        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.12.0"
+        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.13.0"
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v6.1.0"
@@ -113,7 +113,7 @@ jobs:
           php-version: "8.1"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@1.12.0"
+        uses: "ergebnis/.github/actions/composer/determine-root-version@1.13.0"
 ```
 
 For details, see [`actions/composer/determine-root-version/action.yaml`](actions/composer/determine-root-version/action.yaml).
@@ -178,7 +178,7 @@ jobs:
           php-version: "8.1"
 
       - name: "Determine composer cache directory"
-        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.12.0"
+        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.13.0"
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v6.1.0"
@@ -188,7 +188,7 @@ jobs:
           restore-keys: "composer-${{ matrix.dependencies }}-"
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ergebnis/.github/actions/composer/install@1.12.0"
+        uses: "ergebnis/.github/actions/composer/install@1.13.0"
         with:
           dependencies: "${{ matrix.dependencies }}"
 ```
@@ -256,7 +256,7 @@ jobs:
 
     steps:
       - name: "Assign @ergebnis-bot"
-        uses: "ergebnis/.github/actions/github/pull-request/add-assignee@1.12.0"
+        uses: "ergebnis/.github/actions/github/pull-request/add-assignee@1.13.0"
         with:
           assignee: "ergebnis-bot"
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
@@ -300,7 +300,7 @@ jobs:
 
     steps:
       - name: "Add labels based on branch name"
-        uses: "ergebnis/.github/actions/github/pull-request/add-label-based-on-branch-name@1.12.0"
+        uses: "ergebnis/.github/actions/github/pull-request/add-label-based-on-branch-name@1.13.0"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
 ```
@@ -355,7 +355,7 @@ jobs:
 
     steps:
       - name: "Approve pull request"
-        uses: "ergebnis/.github/actions/github/pull-request/approve@1.12.0"
+        uses: "ergebnis/.github/actions/github/pull-request/approve@1.13.0"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
 ```
@@ -408,7 +408,7 @@ jobs:
 
     steps:
       - name: "Merge pull request"
-        uses: "ergebnis/.github/actions/github/pull-request/merge@1.12.0"
+        uses: "ergebnis/.github/actions/github/pull-request/merge@1.13.0"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
 ```
@@ -462,7 +462,7 @@ jobs:
 
     steps:
       - name: "Request review from @ergebnis-bot"
-        uses: "ergebnis/.github/actions/github/pull-request/request-review@1.12.0"
+        uses: "ergebnis/.github/actions/github/pull-request/request-review@1.13.0"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
           reviewer: "ergebnis-bot"
@@ -507,7 +507,7 @@ jobs:
 
     steps:
       - name: "Create release"
-        uses: "ergebnis/.github/actions/github/release/create@1.12.0"
+        uses: "ergebnis/.github/actions/github/release/create@1.13.0"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
 ```
@@ -555,7 +555,7 @@ jobs:
 
     steps:
       - name: "Publish release"
-        uses: "ergebnis/.github/actions/github/release/publish@1.12.0"
+        uses: "ergebnis/.github/actions/github/release/publish@1.13.0"
         with:
           release-id: "9001"
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
@@ -602,7 +602,7 @@ jobs:
           fetch-depth: 50
 
     - name: "Request broken links check on ohdear.app"
-      uses: "ergebnis/.github/actions/oh-dear/check/request-run@1.12.0"
+      uses: "ergebnis/.github/actions/oh-dear/check/request-run@1.13.0"
       with:
         oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
         oh-dear-check-id: "${{ secrets.OH_DEAR_BROKEN_LINKS_CHECK_ID }}"
@@ -648,7 +648,7 @@ jobs:
           fetch-depth: 50
 
     - name: "Start maintenance period on ohdear.app"
-      uses: "ergebnis/.github/actions/oh-dear/maintenance-period/start@1.12.0"
+      uses: "ergebnis/.github/actions/oh-dear/maintenance-period/start@1.13.0"
       with:
         oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
         oh-dear-site-id: "${{ secrets.OH_DEAR_SITE_ID }}"
@@ -694,7 +694,7 @@ jobs:
           fetch-depth: 50
 
     - name: "Stop maintenance period on ohdear.app"
-      uses: "ergebnis/.github/actions/oh-dear/maintenance-period/stop@1.12.0"
+      uses: "ergebnis/.github/actions/oh-dear/maintenance-period/stop@1.13.0"
       with:
         oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
         oh-dear-site-id: "${{ secrets.OH_DEAR_SITE_ID }}"
@@ -746,7 +746,7 @@ jobs:
           tools: "phive"
 
       - name: "Install dependencies with phive"
-        uses: "ergebnis/.github/actions/phive/install@1.12.0"
+        uses: "ergebnis/.github/actions/phive/install@1.13.0"
         with:
           trust-gpg-keys: "0x033E5F8D801A2F8D,0x2A8299CE842DD38C"
 ```
