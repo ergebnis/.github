@@ -201,7 +201,7 @@ For a full diff see [`1.0.0...1.1.0`][1.0.0...1.1.0].
 
 ## [`1.0.0`][1.0.0]
 
-For a full diff see [`1.0.0...main`][1.0.0...main].
+For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 
 ### Added
 
@@ -253,7 +253,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [1.12.0...main]: https://github.com/ergebnis/.github/compare/1.12.0...main
 
 [#47]: https://github.com/ergebnis/.github/pull/47
-[#48]: https://github.com/ergebnis/.github/pull/48
 [#49]: https://github.com/ergebnis/.github/pull/49
 [#52]: https://github.com/ergebnis/.github/pull/52
 [#54]: https://github.com/ergebnis/.github/pull/54
