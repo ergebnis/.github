@@ -248,7 +248,8 @@ jobs:
     if: >
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success' &&
-      github.actor == 'dependabot[bot]' && (
+      github.event.workflow_run.actor.login == 'dependabot[bot]' &&
+      github.event.workflow_run.head_repository.full_name == github.repository && (
         startsWith(github.event.workflow_run.head_commit.message, 'composer(deps-dev)') ||
         startsWith(github.event.workflow_run.head_commit.message, 'github-actions(deps)')
       )
@@ -346,7 +347,8 @@ jobs:
     if: >
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success' &&
-      github.actor == 'dependabot[bot]' && (
+      github.event.workflow_run.actor.login == 'dependabot[bot]' &&
+      github.event.workflow_run.head_repository.full_name == github.repository && (
         startsWith(github.event.workflow_run.head_commit.message, 'composer(deps-dev)') ||
         startsWith(github.event.workflow_run.head_commit.message, 'github-actions(deps)')
       )
@@ -398,7 +400,8 @@ jobs:
     if: >
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success' &&
-      github.actor == 'dependabot[bot]' && (
+      github.event.workflow_run.actor.login == 'dependabot[bot]' &&
+      github.event.workflow_run.head_repository.full_name == github.repository && (
         startsWith(github.event.workflow_run.head_commit.message, 'composer(deps-dev)') ||
         startsWith(github.event.workflow_run.head_commit.message, 'github-actions(deps)')
       )
@@ -451,7 +454,8 @@ jobs:
     if: >
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success' &&
-      github.actor == 'dependabot[bot]' && (
+      github.event.workflow_run.actor.login == 'dependabot[bot]' &&
+      github.event.workflow_run.head_repository.full_name == github.repository && (
         startsWith(github.event.workflow_run.head_commit.message, 'composer(deps-dev)') ||
         startsWith(github.event.workflow_run.head_commit.message, 'github-actions(deps)')
       )
