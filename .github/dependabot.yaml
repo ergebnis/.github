@@ -99,6 +99,19 @@ updates:
       prefix: "github-actions"
     cooldown:
       default-days: 7
+    directory: "/actions/github/release/publish"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "weekly"
+
+  - commit-message:
+      include: "scope"
+      prefix: "github-actions"
+    cooldown:
+      default-days: 7
     directory: "/actions/oh-dear/check/request-run"
     labels:
       - "dependency"

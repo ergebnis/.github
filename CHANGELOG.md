@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.12.0...main`][1.12.0...main].
 
+### Changed
+
+- Updated `actions/github-script` for `github/release/publish` and configured dependabot to keep it up to date ([#257]), by [@localheinz]
+
 ### Fixed
 
 - Adjusted `github/pull-request/add-label-based-on-branch-name` to await adding the label ([#253]), by [@localheinz]
@@ -274,6 +278,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#253]: https://github.com/ergebnis/.github/pull/253
 [#255]: https://github.com/ergebnis/.github/pull/255
 [#256]: https://github.com/ergebnis/.github/pull/256
+[#257]: https://github.com/ergebnis/.github/pull/257
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
