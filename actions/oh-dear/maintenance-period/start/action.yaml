@@ -12,7 +12,7 @@ inputs:
     description: "Oh Dear API token of a user with permission to start maintenance period"
     required: true
   oh-dear-site-id:
-    description: "Site identifer of an Oh Dear site for which to start a maintenance period"
+    description: "Site identifier of an Oh Dear site for which to start a maintenance period"
     required: true
 
 runs:

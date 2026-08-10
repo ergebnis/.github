@@ -12,7 +12,7 @@ inputs:
     description: "Oh Dear API token of a user with permission to request a check run"
     required: true
   oh-dear-check-id:
-    description: "Check identifer of an Oh Dear check for which to request a run"
+    description: "Check identifier of an Oh Dear check for which to request a run"
     required: true
 
 runs:

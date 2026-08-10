@@ -23,6 +23,7 @@ For a full diff see [`1.12.0...main`][1.12.0...main].
 - Adjusted `composer/determine-cache-directory` to pass the working directory through the environment and to fail when the cache directory cannot be determined ([#262]), by [@localheinz]
 - Adjusted `phive/install` to pass inputs through the environment ([#263]), by [@localheinz]
 - Adjusted `oh-dear` actions to fail on HTTP errors and to pass inputs through the environment ([#264]), by [@localheinz]
+- Adjusted `oh-dear` action metadata to describe the correct operation ([#265]), by [@localheinz]
 
 ## [`1.12.0`][1.12.0]
 
@@ -291,6 +292,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#262]: https://github.com/ergebnis/.github/pull/262
 [#263]: https://github.com/ergebnis/.github/pull/263
 [#264]: https://github.com/ergebnis/.github/pull/264
+[#265]: https://github.com/ergebnis/.github/pull/265
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
