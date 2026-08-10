@@ -598,7 +598,7 @@ jobs:
           fetch-depth: 50
 
     - name: "Request broken links check on ohdear.app"
-      uses: "ergebnis/.github/actions/oh-dear/maintenance-period/start@1.12.0"
+      uses: "ergebnis/.github/actions/oh-dear/check/request-run@1.12.0"
       with:
         oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
         oh-dear-check-id: "${{ secrets.OH_DEAR_BROKEN_LINKS_CHECK_ID }}"
