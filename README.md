@@ -527,7 +527,7 @@ none
 - The `RELEASE_ID` environment variable contains the release identifier.
 - The `RELEASE_TAG` environment variable contains the release tag.
 - The `RELEASE_UPLOAD_URL` environment variable contains the URL for uploading release assets.
--
+
 ### <a name="github-release-publish"> `ergebnis/.github/actions/github/release/publish`
 
 This action publishes a release.
