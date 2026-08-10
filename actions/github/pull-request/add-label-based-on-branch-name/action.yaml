@@ -19,7 +19,7 @@ runs:
 
   steps:
     - name: "Determine pull request number"
-      uses: "actions/github-script@v9.0.0"
+      uses: "actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3" # v9.0.0
       with:
         github-token: "${{ inputs.github-token }}"
         script: |
@@ -33,7 +33,11 @@ runs:
             return;
           }
 
-          if (context.eventName == 'workflow_run') {
+          if (
+            context.eventName == 'workflow_run' &&
+            Array.isArray(context.payload.workflow_run.pull_requests) &&
+            context.payload.workflow_run.pull_requests.length > 0
+          ) {
             core.exportVariable("PULL_REQUEST_NUMBER", context.payload.workflow_run.pull_requests[0].number);
             core.exportVariable("PULL_REQUEST_BRANCH_NAME", context.payload.workflow_run.pull_requests[0].head.ref);
 
@@ -43,7 +47,7 @@ runs:
           core.setFailed(`Unable to determine the pull request number and branch name for event "${context.eventName}"`);
 
     - name: "Add label to pull request based on branch name"
-      uses: "actions/github-script@v9.0.0"
+      uses: "actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3" # v9.0.0
       with:
         github-token: "${{ inputs.github-token }}"
         script: |
@@ -78,11 +82,15 @@ runs:
 
           const label = branchPrefixToLabel[matches[1]];
 
-          await github.rest.issues.addLabels({
-            issue_number: process.env.PULL_REQUEST_NUMBER,
-            labels: [
-              label,
-            ],
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-          });
+          try {
+            await github.rest.issues.addLabels({
+              issue_number: process.env.PULL_REQUEST_NUMBER,
+              labels: [
+                label,
+              ],
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+          } catch (error) {
+            core.setFailed(error.message);
+          }

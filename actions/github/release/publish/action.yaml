@@ -21,15 +21,23 @@ runs:
 
   steps:
     - name: "Publish release"
-      uses: "actions/github-script@v7.0.1"
+      uses: "actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3" # v9.0.0
+      env:
+        RELEASE_ID: "${{ inputs.release-id }}"
       with:
         github-token: "${{ inputs.github-token }}"
         script: |
+          if (!process.env.RELEASE_ID) {
+            core.setFailed("The environment variable RELEASE_ID is not defined.")
+
+            return;
+          }
+
           try {
             const response = await github.rest.repos.updateRelease({
               draft: false,
               owner: context.repo.owner,
-              release_id: ${{ inputs.release-id }},
+              release_id: process.env.RELEASE_ID,
               repo: context.repo.repo,
             });
 

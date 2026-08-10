@@ -8,10 +8,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.12.0...main`][1.12.0...main].
 
+### Changed
+
+- Updated `actions/github-script` for `github/release/publish` and configured dependabot to keep it up to date ([#257]), by [@localheinz]
+
 ### Fixed
 
 - Adjusted `github/pull-request/add-label-based-on-branch-name` to await adding the label ([#253]), by [@localheinz]
 - Adjusted `github/release/create` to skip determining the release tag when the event is not a tag push ([#255]), by [@localheinz]
+- Adjusted `github/release/publish` to pass the release identifier through the environment ([#256]), by [@localheinz]
+- Adjusted `github/pull-request` actions to fail instead of throwing when the pull request cannot be determined for a `workflow_run` event ([#258]), by [@localheinz]
+- Adjusted `github/pull-request/add-label-based-on-branch-name` to handle errors when adding labels ([#259]), by [@localheinz]
+- Adjusted `composer/determine-root-version` to fail when a branch alias has not been defined ([#261]), by [@localheinz]
+- Adjusted `composer/determine-cache-directory` to pass the working directory through the environment and to fail when the cache directory cannot be determined ([#262]), by [@localheinz]
+- Adjusted `phive/install` to pass inputs through the environment ([#263]), by [@localheinz]
+- Adjusted `oh-dear` actions to fail on HTTP errors and to pass inputs through the environment ([#264]), by [@localheinz]
+- Adjusted `oh-dear` action metadata to describe the correct operation ([#265]), by [@localheinz]
 
 ## [`1.12.0`][1.12.0]
 
@@ -189,7 +201,7 @@ For a full diff see [`1.0.0...1.1.0`][1.0.0...1.1.0].
 
 ## [`1.0.0`][1.0.0]
 
-For a full diff see [`1.0.0...main`][1.0.0...main].
+For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 
 ### Added
 
@@ -241,7 +253,6 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [1.12.0...main]: https://github.com/ergebnis/.github/compare/1.12.0...main
 
 [#47]: https://github.com/ergebnis/.github/pull/47
-[#48]: https://github.com/ergebnis/.github/pull/48
 [#49]: https://github.com/ergebnis/.github/pull/49
 [#52]: https://github.com/ergebnis/.github/pull/52
 [#54]: https://github.com/ergebnis/.github/pull/54
@@ -272,6 +283,15 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 [#251]: https://github.com/ergebnis/.github/pull/251
 [#253]: https://github.com/ergebnis/.github/pull/253
 [#255]: https://github.com/ergebnis/.github/pull/255
+[#256]: https://github.com/ergebnis/.github/pull/256
+[#257]: https://github.com/ergebnis/.github/pull/257
+[#258]: https://github.com/ergebnis/.github/pull/258
+[#259]: https://github.com/ergebnis/.github/pull/259
+[#261]: https://github.com/ergebnis/.github/pull/261
+[#262]: https://github.com/ergebnis/.github/pull/262
+[#263]: https://github.com/ergebnis/.github/pull/263
+[#264]: https://github.com/ergebnis/.github/pull/264
+[#265]: https://github.com/ergebnis/.github/pull/265
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner

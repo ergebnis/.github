@@ -17,7 +17,7 @@ This project provides the following composite actions:
 - [`ergebnis/.github/actions/github/pull-request/add-label-based-on-branch-name`](#github-pull-request-add-label-based-on-branch-name)
 - [`ergebnis/.github/actions/github/pull-request/approve`](#github-pull-request-approve)
 - [`ergebnis/.github/actions/github/pull-request/merge`](#github-pull-request-merge)
-- [`ergebnis/.github/actions/github/pull-request/request-review`](#github-pull-request-review)
+- [`ergebnis/.github/actions/github/pull-request/request-review`](#github-pull-request-request-review)
 - [`ergebnis/.github/actions/github/release/create`](#github-release-create)
 - [`ergebnis/.github/actions/github/release/publish`](#github-release-publish)
 - [`ergebnis/.github/actions/oh-dear/check/request-run`](#oh-dear-check-request-run)
@@ -248,7 +248,8 @@ jobs:
     if: >
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success' &&
-      github.actor == 'dependabot[bot]' && (
+      github.event.workflow_run.actor.login == 'dependabot[bot]' &&
+      github.event.workflow_run.head_repository.full_name == github.repository && (
         startsWith(github.event.workflow_run.head_commit.message, 'composer(deps-dev)') ||
         startsWith(github.event.workflow_run.head_commit.message, 'github-actions(deps)')
       )
@@ -346,7 +347,8 @@ jobs:
     if: >
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success' &&
-      github.actor == 'dependabot[bot]' && (
+      github.event.workflow_run.actor.login == 'dependabot[bot]' &&
+      github.event.workflow_run.head_repository.full_name == github.repository && (
         startsWith(github.event.workflow_run.head_commit.message, 'composer(deps-dev)') ||
         startsWith(github.event.workflow_run.head_commit.message, 'github-actions(deps)')
       )
@@ -358,7 +360,7 @@ jobs:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
 ```
 
-For details, see [`actions/github/pull-request/merge/action.yaml`](actions/github/pull-request/merge/action.yaml).
+For details, see [`actions/github/pull-request/approve/action.yaml`](actions/github/pull-request/approve/action.yaml).
 
 #### Inputs
 
@@ -398,7 +400,8 @@ jobs:
     if: >
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success' &&
-      github.actor == 'dependabot[bot]' && (
+      github.event.workflow_run.actor.login == 'dependabot[bot]' &&
+      github.event.workflow_run.head_repository.full_name == github.repository && (
         startsWith(github.event.workflow_run.head_commit.message, 'composer(deps-dev)') ||
         startsWith(github.event.workflow_run.head_commit.message, 'github-actions(deps)')
       )
@@ -415,7 +418,7 @@ For details, see [`actions/github/pull-request/merge/action.yaml`](actions/githu
 #### Inputs
 
 - `github-token`, required: The GitHub token of a user with permission to merge a pull request
-- `merge-method`, option: The merge method to use, one `"merge"`, `"rebase"`, `"squash"`, defaults to `"merge"`
+- `merge-method`, optional: The merge method to use, one of `"merge"`, `"rebase"`, `"squash"`, defaults to `"merge"`
 
 #### Outputs
 
@@ -451,7 +454,8 @@ jobs:
     if: >
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success' &&
-      github.actor == 'dependabot[bot]' && (
+      github.event.workflow_run.actor.login == 'dependabot[bot]' &&
+      github.event.workflow_run.head_repository.full_name == github.repository && (
         startsWith(github.event.workflow_run.head_commit.message, 'composer(deps-dev)') ||
         startsWith(github.event.workflow_run.head_commit.message, 'github-actions(deps)')
       )
@@ -527,7 +531,7 @@ none
 - The `RELEASE_ID` environment variable contains the release identifier.
 - The `RELEASE_TAG` environment variable contains the release tag.
 - The `RELEASE_UPLOAD_URL` environment variable contains the URL for uploading release assets.
--
+
 ### <a name="github-release-publish"> `ergebnis/.github/actions/github/release/publish`
 
 This action publishes a release.
@@ -598,7 +602,7 @@ jobs:
           fetch-depth: 50
 
     - name: "Request broken links check on ohdear.app"
-      uses: "ergebnis/.github/actions/oh-dear/maintenance-period/start@1.12.0"
+      uses: "ergebnis/.github/actions/oh-dear/check/request-run@1.12.0"
       with:
         oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
         oh-dear-check-id: "${{ secrets.OH_DEAR_BROKEN_LINKS_CHECK_ID }}"

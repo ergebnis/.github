@@ -18,5 +18,10 @@ runs:
 
   steps:
     - name: "Determine composer cache directory"
-      run: "echo \"COMPOSER_CACHE_DIR=$(composer config cache-dir --working-dir=${{ inputs.working-directory }})\" >> $GITHUB_ENV"
+      env:
+        COMPOSER_DETERMINE_CACHE_DIRECTORY_WORKING_DIRECTORY: "${{ inputs.working-directory }}"
+      run: | # zizmor: ignore[github-env]
+        COMPOSER_CACHE_DIR="$(composer config cache-dir --working-dir="${COMPOSER_DETERMINE_CACHE_DIRECTORY_WORKING_DIRECTORY}")"
+
+        echo "COMPOSER_CACHE_DIR=${COMPOSER_CACHE_DIR}" >> "${GITHUB_ENV}"
       shell: "bash"

@@ -27,11 +27,11 @@ runs:
   steps:
     - name: "Determine tag"
       if: "github.event_name == 'push' && github.ref_type == 'tag'"
-      run: "echo \"RELEASE_TAG=${GITHUB_REF#refs/tags/}\" >> $GITHUB_ENV"
+      run: "echo \"RELEASE_TAG=${GITHUB_REF#refs/tags/}\" >> $GITHUB_ENV" # zizmor: ignore[github-env]
       shell: "bash"
 
     - name: "Create release"
-      uses: "actions/github-script@v9.0.0"
+      uses: "actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3" # v9.0.0
       with:
         github-token: "${{ inputs.github-token }}"
         script: |

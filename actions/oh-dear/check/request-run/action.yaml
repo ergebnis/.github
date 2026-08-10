@@ -12,7 +12,7 @@ inputs:
     description: "Oh Dear API token of a user with permission to request a check run"
     required: true
   oh-dear-check-id:
-    description: "Check identifer of an Oh Dear check for which to request a run"
+    description: "Check identifier of an Oh Dear check for which to request a run"
     required: true
 
 runs:
@@ -20,9 +20,14 @@ runs:
 
   steps:
     - name: "Request a check run on ohdear.app"
+      env:
+        OH_DEAR_API_TOKEN: "${{ inputs.oh-dear-api-token }}"
+        OH_DEAR_CHECK_ID: "${{ inputs.oh-dear-check-id }}"
       run: |
-        curl -X POST "https://ohdear.app/api/checks/${{ inputs.oh-dear-check-id }}/request-run" \
-          -H "Authorization: Bearer ${{ inputs.oh-dear-api-token }}" \
-          -H "Accept: application/json" \
-          -H "Content-Type: application/json"
+        curl --url "https://ohdear.app/api/checks/${OH_DEAR_CHECK_ID}/request-run" \
+          --fail \
+          --header "Accept: application/json" \
+          --header "Authorization: Bearer ${OH_DEAR_API_TOKEN}" \
+          --header "Content-Type: application/json" \
+          --request POST
       shell: "bash"

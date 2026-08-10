@@ -13,7 +13,6 @@ inputs:
     description: "Which directory to use as PHIVE_HOME directory"
     required: false
   trust-gpg-keys:
-    default: ""
     description: "A comma-separated list of trusted GPG keys"
     required: true
 
@@ -22,11 +21,13 @@ runs:
 
   steps:
     - name: "Create phive home directory"
-      run: "mkdir -p ${{ inputs.phive-home }}"
+      env:
+        PHIVE_HOME: "${{ inputs.phive-home }}"
+      run: "mkdir -p \"${PHIVE_HOME}\""
       shell: "bash"
 
     - name: "Cache dependencies installed with phive"
-      uses: "actions/cache@v6.1.0"
+      uses: "actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9" # v6.1.0
       with:
         path: "${{ inputs.phive-home }}"
         key: "phive-${{ hashFiles('**/phars.xml') }}"
@@ -35,5 +36,6 @@ runs:
     - name: "Install dependencies with phive"
       env:
         PHIVE_HOME: "${{ inputs.phive-home }}"
-      run: "phive install --trust-gpg-keys ${{ inputs.trust-gpg-keys }}"
+        PHIVE_TRUST_GPG_KEYS: "${{ inputs.trust-gpg-keys }}"
+      run: "phive install --trust-gpg-keys \"${PHIVE_TRUST_GPG_KEYS}\""
       shell: "bash"
