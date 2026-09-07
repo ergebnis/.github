@@ -622,6 +622,8 @@ none
 #### Side Effects
 
 - A check run is requested by the user who owns the Oh Dear API token specified with the `oh-dear-api-token` input for the check identified by the `oh-dear-check-id` input.
+- When Oh Dear rate-limits the request, responding with `429 Too Many Requests`, a warning is emitted and the step succeeds. Oh Dear accepts a run request for a check every 60 minutes, so a deployment that follows another one closely is declined, and the run that has been accepted covers it as well.
+- When Oh Dear responds with any other status than `2xx`, the step fails. The status, the `Retry-After` header, and the response body are reported in either case.
 
 ### <a name="oh-dear-maintenance-period-start"> `ergebnis/.github/actions/oh-dear/maintenance-period/start`
 
@@ -668,6 +670,7 @@ none
 #### Side Effects
 
 - A maintenance period is started by the user who owns the Oh Dear API token specified with the `oh-dear-api-token` input for the site identified by the `oh-dear-site-id` input.
+- When Oh Dear does not respond with a `2xx` status, the step fails, including when it rate-limits the request, since a maintenance period that has not started does not suppress notifications. The status, the `Retry-After` header, and the response body are reported.
 
 ### <a name="oh-dear-maintenance-period-stop"> `ergebnis/.github/actions/oh-dear/maintenance-period/stop`
 
@@ -714,6 +717,7 @@ none
 #### Side Effects
 
 - A maintenance period is stopped by the user who owns the Oh Dear API token specified with the `oh-dear-api-token` input for the site identified by the `oh-dear-site-id` input.
+- When Oh Dear does not respond with a `2xx` status, the step fails, including when it rate-limits the request, since a maintenance period that has not stopped keeps suppressing notifications. The status, the `Retry-After` header, and the response body are reported.
 
 ### <a name="phive-install"> `ergebnis/.github/actions/phive/install`
 

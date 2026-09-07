@@ -1,7 +1,7 @@
 # https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-run-steps-actions
-# https://ohdear.app/docs/integrations/api/checks#enable-amp-disable-a-check
+# https://ohdear.app/docs/api/checks
 
 name: "Request a check run"
 
@@ -19,15 +19,14 @@ runs:
   using: "composite"
 
   steps:
+    # A run request that Oh Dear rate-limits is tolerated: it accepts one per
+    # check every 60 minutes, so deployments that follow each other closely are
+    # declined, and the run that has been accepted covers them as well.
     - name: "Request a check run on ohdear.app"
       env:
         OH_DEAR_API_TOKEN: "${{ inputs.oh-dear-api-token }}"
-        OH_DEAR_CHECK_ID: "${{ inputs.oh-dear-check-id }}"
-      run: |
-        curl --url "https://ohdear.app/api/checks/${OH_DEAR_CHECK_ID}/request-run" \
-          --fail \
-          --header "Accept: application/json" \
-          --header "Authorization: Bearer ${OH_DEAR_API_TOKEN}" \
-          --header "Content-Type: application/json" \
-          --request POST
+        OH_DEAR_OPERATION: "Requesting a check run"
+        OH_DEAR_TOLERATE_RATE_LIMIT: "true"
+        OH_DEAR_URL: "https://ohdear.app/api/checks/${{ inputs.oh-dear-check-id }}/request-run"
+      run: "${{ github.action_path }}/../../request.sh"
       shell: "bash"

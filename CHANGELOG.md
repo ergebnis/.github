@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.13.0...main`][1.13.0...main].
 
+### Fixed
+
+- Adjusted `oh-dear` actions to report the response when Oh Dear does not respond with a `2xx` status, and adjusted `oh-dear/check/request-run` to warn instead of fail when Oh Dear rate-limits the run request, which it does for a check it has accepted a run request for in the last 60 minutes ([#287]), by [@localheinz]
+
 ## [`1.13.0`][1.13.0]
 
 For a full diff see [`1.12.0...1.13.0`][1.12.0...1.13.0].
@@ -298,6 +302,7 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [#263]: https://github.com/ergebnis/.github/pull/263
 [#264]: https://github.com/ergebnis/.github/pull/264
 [#265]: https://github.com/ergebnis/.github/pull/265
+[#287]: https://github.com/ergebnis/.github/pull/287
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
