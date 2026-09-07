@@ -10,7 +10,20 @@ updates:
       default-days: 7
     directories:
       - "/"
-      - "/actions/**"
+      - "/actions/composer/determine-cache-directory"
+      - "/actions/composer/determine-root-version"
+      - "/actions/composer/install"
+      - "/actions/github/pull-request/add-assignee"
+      - "/actions/github/pull-request/add-label-based-on-branch-name"
+      - "/actions/github/pull-request/approve"
+      - "/actions/github/pull-request/merge"
+      - "/actions/github/pull-request/request-review"
+      - "/actions/github/release/create"
+      - "/actions/github/release/publish"
+      - "/actions/oh-dear/check/request-run"
+      - "/actions/oh-dear/maintenance-period/start"
+      - "/actions/oh-dear/maintenance-period/stop"
+      - "/actions/phive/install"
     labels:
       - "dependency"
     open-pull-requests-limit: 10
