@@ -1,7 +1,7 @@
 # https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-run-steps-actions
-# https://ohdear.app/docs/integrations/api/maintenance-windows#creating-a-new-maintenance-period-on-demand
+# https://ohdear.app/docs/api/maintenance-windows
 
 name: "Stops maintenance period"
 
@@ -19,15 +19,14 @@ runs:
   using: "composite"
 
   steps:
+    # A rate-limited request is not tolerated: when the maintenance period
+    # does not stop, Oh Dear keeps suppressing notifications about incidents it
+    # should notify about.
     - name: "Stop maintenance period on ohdear.app"
       env:
         OH_DEAR_API_TOKEN: "${{ inputs.oh-dear-api-token }}"
-        OH_DEAR_SITE_ID: "${{ inputs.oh-dear-site-id }}"
-      run: |
-        curl --url "https://ohdear.app/api/sites/${OH_DEAR_SITE_ID}/stop-maintenance" \
-          --fail \
-          --header "Accept: application/json" \
-          --header "Authorization: Bearer ${OH_DEAR_API_TOKEN}" \
-          --header "Content-Type: application/json" \
-          --request POST
+        OH_DEAR_OPERATION: "Stopping a maintenance period"
+        OH_DEAR_TOLERATE_RATE_LIMIT: "false"
+        OH_DEAR_URL: "https://ohdear.app/api/sites/${{ inputs.oh-dear-site-id }}/stop-maintenance"
+      run: "${{ github.action_path }}/../../request.sh"
       shell: "bash"
