@@ -24,6 +24,10 @@ updates:
       - "/actions/oh-dear/maintenance-period/start"
       - "/actions/oh-dear/maintenance-period/stop"
       - "/actions/phive/install"
+    groups:
+      github-actions:
+        applies-to: "version-updates"
+        group-by: "dependency-name"
     labels:
       - "dependency"
     open-pull-requests-limit: 10
