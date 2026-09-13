@@ -27,6 +27,6 @@ runs:
         OH_DEAR_API_TOKEN: "${{ inputs.oh-dear-api-token }}"
         OH_DEAR_OPERATION: "Stopping a maintenance period"
         OH_DEAR_TOLERATE_RATE_LIMIT: "false"
-        OH_DEAR_URL: "https://ohdear.app/api/sites/${{ inputs.oh-dear-site-id }}/stop-maintenance"
+        OH_DEAR_URL: "https://ohdear.app/api/monitors/${{ inputs.oh-dear-site-id }}/stop-maintenance"
       run: "${{ github.action_path }}/../../request.sh"
       shell: "bash"

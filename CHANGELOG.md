@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.13.1...main`][1.13.1...main].
 
+### Fixed
+
+- Adjusted `oh-dear/maintenance-period/start` and `oh-dear/maintenance-period/stop` to use the `/api/monitors/` endpoints, since Oh Dear no longer serves the `/api/sites/` endpoints ([#291]), by [@localheinz]
+
 ## [`1.13.1`][1.13.1]
 
 For a full diff see [`1.13.0...1.13.1`][1.13.0...1.13.1].
@@ -309,6 +313,7 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [#264]: https://github.com/ergebnis/.github/pull/264
 [#265]: https://github.com/ergebnis/.github/pull/265
 [#287]: https://github.com/ergebnis/.github/pull/287
+[#291]: https://github.com/ergebnis/.github/pull/291
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
