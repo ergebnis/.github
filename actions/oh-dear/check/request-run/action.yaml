@@ -28,5 +28,5 @@ runs:
         OH_DEAR_OPERATION: "Requesting a check run"
         OH_DEAR_TOLERATE_RATE_LIMIT: "true"
         OH_DEAR_URL: "https://ohdear.app/api/checks/${{ inputs.oh-dear-check-id }}/request-run"
-      run: "${{ github.action_path }}/../../request.sh"
+      run: "\"${GITHUB_ACTION_PATH}/../../request.sh\""
       shell: "bash"
