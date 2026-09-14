@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.13.2...main`][1.13.2...main].
 
+### Fixed
+
+- Adjusted `composer/determine-root-version`, `composer/install`, `oh-dear/check/request-run`, `oh-dear/maintenance-period/start`, and `oh-dear/maintenance-period/stop` to use the `GITHUB_ACTION_PATH` environment variable instead of the `github.action_path` context, which resolves to a path on the runner host rather than in the container when a job runs in a container ([#292]), by [@localheinz]
+
 ## [`1.13.2`][1.13.2]
 
 For a full diff see [`1.13.1...1.13.2`][1.13.1...1.13.2].
@@ -320,6 +324,7 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [#265]: https://github.com/ergebnis/.github/pull/265
 [#287]: https://github.com/ergebnis/.github/pull/287
 [#291]: https://github.com/ergebnis/.github/pull/291
+[#292]: https://github.com/ergebnis/.github/pull/292
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner

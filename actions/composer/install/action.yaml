@@ -25,5 +25,5 @@ runs:
       env:
         COMPOSER_INSTALL_DEPENDENCIES: "${{ inputs.dependencies }}"
         COMPOSER_INSTALL_WORKING_DIRECTORY: "${{ inputs.working-directory }}"
-      run: "${{ github.action_path }}/run.sh"
+      run: "\"${GITHUB_ACTION_PATH}/run.sh\""
       shell: "bash"
