@@ -20,9 +20,9 @@ fi
 COMPOSER_ROOT_VERSION=$(jq --arg key "dev-${branch}" --raw-output '.["extra"]["branch-alias"][$key]' "${pathToComposerJsonFile}")
 
 if [[ null = "${COMPOSER_ROOT_VERSION}" ]]; then
-    echo "::error::A branch alias has not been defined in \"${pathToComposerJsonFile}\" for branch \"${branch}\"."
+    echo "::warning::A branch alias has not been defined in \"${pathToComposerJsonFile}\" for branch \"${branch}\". Composer will guess the root version, see https://getcomposer.org/root-version."
 
-    exit 1
+    exit 0
 fi
 
 echo "COMPOSER_ROOT_VERSION=${COMPOSER_ROOT_VERSION}" >> "${GITHUB_ENV}"

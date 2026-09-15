@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.13.3...main`][1.13.3...main].
 
+### Fixed
+
+- Adjusted `composer/determine-root-version` to emit a warning instead of failing when a branch alias has not been defined ([#293]), by [@localheinz]
+
 ## [`1.13.3`][1.13.3]
 
 For a full diff see [`1.13.2...1.13.3`][1.13.2...1.13.3].
@@ -331,6 +335,7 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [#287]: https://github.com/ergebnis/.github/pull/287
 [#291]: https://github.com/ergebnis/.github/pull/291
 [#292]: https://github.com/ergebnis/.github/pull/292
+[#293]: https://github.com/ergebnis/.github/pull/293
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
