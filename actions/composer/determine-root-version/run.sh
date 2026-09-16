@@ -17,7 +17,13 @@ if [[ ! -f "${pathToComposerJsonFile}" ]]; then
     exit 1
 fi
 
-COMPOSER_ROOT_VERSION=$(jq --arg key "dev-${branch}" --raw-output '.["extra"]["branch-alias"][$key]' "${pathToComposerJsonFile}")
+if ! jq --exit-status 'type == "object"' "${pathToComposerJsonFile}" >/dev/null 2>&1; then
+    echo "::error::The file \"${pathToComposerJsonFile}\" does not contain a valid JSON object."
+
+    exit 1
+fi
+
+COMPOSER_ROOT_VERSION=$(jq --arg key "dev-${branch}" --raw-output 'try .["extra"]["branch-alias"][$key] catch null' "${pathToComposerJsonFile}")
 
 if [[ null = "${COMPOSER_ROOT_VERSION}" ]]; then
     echo "::warning::A branch alias has not been defined in \"${pathToComposerJsonFile}\" for branch \"${branch}\". Composer will guess the root version, see https://getcomposer.org/root-version."
