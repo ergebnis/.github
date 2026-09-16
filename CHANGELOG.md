@@ -11,6 +11,7 @@ For a full diff see [`1.13.3...main`][1.13.3...main].
 ### Fixed
 
 - Adjusted `composer/determine-root-version` to emit a warning instead of failing when a branch alias has not been defined ([#293]), by [@localheinz]
+- Adjusted `composer/determine-root-version` to fail when `composer.json` does not contain a valid JSON object ([#295]), by [@localheinz]
 
 ## [`1.13.3`][1.13.3]
 
@@ -336,6 +337,7 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [#291]: https://github.com/ergebnis/.github/pull/291
 [#292]: https://github.com/ergebnis/.github/pull/292
 [#293]: https://github.com/ergebnis/.github/pull/293
+[#295]: https://github.com/ergebnis/.github/pull/295
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
