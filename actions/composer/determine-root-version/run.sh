@@ -9,7 +9,7 @@ if [[ ! -d ${workingDirectory} ]]; then
   exit 1;
 fi
 
-pathToComposerJsonFile="${COMPOSER_DETERMINE_ROOT_VERSION_WORKING_DIRECTORY}/composer.json"
+pathToComposerJsonFile="${workingDirectory}/composer.json"
 
 if [[ ! -f "${pathToComposerJsonFile}" ]]; then
     echo "::error::A composer.json file could not be found in the directory \"${workingDirectory}\"."
