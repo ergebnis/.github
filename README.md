@@ -210,7 +210,8 @@ none
 
   ```shell
   composer update --ansi --no-interaction --no-progress --prefer-lowest
-  ````
+  ```
+
 - When `dependencies` is set to `"locked"`, dependencies are installed in the directory specified by `working-directory` with
 
   ```shell
@@ -221,7 +222,7 @@ none
 
   ```shell
   composer update --ansi --no-interaction --no-progress
-  ````
+  ```
 
 ### <a name="github-pull-request-add-assignee"> `ergebnis/.github/actions/github/pull-request/add-assignee`
 
@@ -491,7 +492,6 @@ This action creates a release.
 This is useful when you automatically want to create releases with [automatically generated release notes](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes).
 
 ```yaml
-
 name: "Release"
 
 on:
@@ -539,7 +539,6 @@ This action publishes a release.
 This is useful when you want to publish a release created in draft mode.
 
 ```yaml
-
 name: "Release"
 
 on:
@@ -557,8 +556,8 @@ jobs:
       - name: "Publish release"
         uses: "ergebnis/.github/actions/github/release/publish@1.13.4"
         with:
-          release-id: "9001"
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
+          release-id: "9001"
 ```
 
 For details, see [`actions/github/release/publish/action.yaml`](actions/github/release/publish/action.yaml).
@@ -596,16 +595,16 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-    - name: "Checkout"
-      uses: "actions/checkout@v7.0.1"
-      with:
+      - name: "Checkout"
+        uses: "actions/checkout@v7.0.1"
+        with:
           fetch-depth: 50
 
-    - name: "Request broken links check on ohdear.app"
-      uses: "ergebnis/.github/actions/oh-dear/check/request-run@1.13.4"
-      with:
-        oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
-        oh-dear-check-id: "${{ secrets.OH_DEAR_BROKEN_LINKS_CHECK_ID }}"
+      - name: "Request broken links check on ohdear.app"
+        uses: "ergebnis/.github/actions/oh-dear/check/request-run@1.13.4"
+        with:
+          oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
+          oh-dear-check-id: "${{ secrets.OH_DEAR_BROKEN_LINKS_CHECK_ID }}"
 ```
 
 For details, see [`actions/oh-dear/check/request-run/action.yaml`](actions/oh-dear/check/request-run/action.yaml).
@@ -613,7 +612,7 @@ For details, see [`actions/oh-dear/check/request-run/action.yaml`](actions/oh-de
 #### Inputs
 
 - `oh-dear-api-token`, required: The Oh Dear API token of a user with permission to request a check run
-- `oh-dear-check-id`, required: Check identifer of an Oh Dear check for which to request a run
+- `oh-dear-check-id`, required: Check identifier of an Oh Dear check for which to request a run
 
 #### Outputs
 
@@ -644,16 +643,16 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-    - name: "Checkout"
-      uses: "actions/checkout@v7.0.1"
-      with:
+      - name: "Checkout"
+        uses: "actions/checkout@v7.0.1"
+        with:
           fetch-depth: 50
 
-    - name: "Start maintenance period on ohdear.app"
-      uses: "ergebnis/.github/actions/oh-dear/maintenance-period/start@1.13.4"
-      with:
-        oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
-        oh-dear-site-id: "${{ secrets.OH_DEAR_SITE_ID }}"
+      - name: "Start maintenance period on ohdear.app"
+        uses: "ergebnis/.github/actions/oh-dear/maintenance-period/start@1.13.4"
+        with:
+          oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
+          oh-dear-site-id: "${{ secrets.OH_DEAR_SITE_ID }}"
 ```
 
 For details, see [`actions/oh-dear/maintenance-period/start/action.yaml`](actions/oh-dear/maintenance-period/start/action.yaml).
@@ -661,7 +660,7 @@ For details, see [`actions/oh-dear/maintenance-period/start/action.yaml`](action
 #### Inputs
 
 - `oh-dear-api-token`, required: The Oh Dear API token of a user with permission to start a maintenance period
-- `oh-dear-site-id`, required: Site identifer of an Oh Dear site for which to start a maintenance period
+- `oh-dear-site-id`, required: Site identifier of an Oh Dear site for which to start a maintenance period
 
 #### Outputs
 
@@ -691,16 +690,16 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-    - name: "Checkout"
-      uses: "actions/checkout@v7.0.1"
-      with:
+      - name: "Checkout"
+        uses: "actions/checkout@v7.0.1"
+        with:
           fetch-depth: 50
 
-    - name: "Stop maintenance period on ohdear.app"
-      uses: "ergebnis/.github/actions/oh-dear/maintenance-period/stop@1.13.4"
-      with:
-        oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
-        oh-dear-site-id: "${{ secrets.OH_DEAR_SITE_ID }}"
+      - name: "Stop maintenance period on ohdear.app"
+        uses: "ergebnis/.github/actions/oh-dear/maintenance-period/stop@1.13.4"
+        with:
+          oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
+          oh-dear-site-id: "${{ secrets.OH_DEAR_SITE_ID }}"
 ```
 
 For details, see [`actions/oh-dear/maintenance-period/stop/action.yaml`](actions/oh-dear/maintenance-period/stop/action.yaml).
@@ -708,7 +707,7 @@ For details, see [`actions/oh-dear/maintenance-period/stop/action.yaml`](actions
 #### Inputs
 
 - `oh-dear-api-token`, required: The Oh Dear API token of a user with permission to stop a maintenance period
-- `oh-dear-site-id`, required: Site identifer of an Oh Dear site for which to stop a maintenance period
+- `oh-dear-site-id`, required: Site identifier of an Oh Dear site for which to stop a maintenance period
 
 #### Outputs
 
