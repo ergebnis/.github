@@ -787,8 +787,6 @@ The maintainers of this project ask contributors to follow the [code of conduct]
 
 The maintainers of this project provide limited support.
 
-You can support the maintenance of this project by [sponsoring @ergebnis](https://github.com/sponsors/ergebnis).
-
 ## Security Policy
 
 This project has a [security policy](.github/SECURITY.md).
