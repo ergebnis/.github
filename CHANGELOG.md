@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.13.4...main`][1.13.4...main].
 
+### Added
+
+- Added `github/pull-request/enable-auto-merge` to allow enabling auto-merge for a pull request ([#312]), by [@localheinz]
+
 ## [`1.13.4`][1.13.4]
 
 For a full diff see [`1.13.3...1.13.4`][1.13.3...1.13.4].
@@ -349,6 +353,7 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [#293]: https://github.com/ergebnis/.github/pull/293
 [#294]: https://github.com/ergebnis/.github/pull/294
 [#295]: https://github.com/ergebnis/.github/pull/295
+[#312]: https://github.com/ergebnis/.github/pull/312
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner

@@ -16,6 +16,7 @@ updates:
       - "/actions/github/pull-request/add-assignee"
       - "/actions/github/pull-request/add-label-based-on-branch-name"
       - "/actions/github/pull-request/approve"
+      - "/actions/github/pull-request/enable-auto-merge"
       - "/actions/github/pull-request/merge"
       - "/actions/github/pull-request/request-review"
       - "/actions/github/release/create"

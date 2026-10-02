@@ -1,0 +1,134 @@
+# https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-run-steps-actions
+# https://docs.github.com/en/graphql/reference/mutations#enablepullrequestautomerge
+# https://docs.github.com/en/rest/pulls/pulls#merge-a-pull-request
+# https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
+# https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#workflow_run
+
+name: "Enable auto-merge for pull request"
+
+description: "Enables auto-merge for a pull request"
+
+inputs:
+  github-token:
+    description: "GitHub token of a user with permission to merge a pull request"
+    required: true
+  merge-method:
+    default: "merge"
+    description: "Which merge method to use, one of \"merge\", \"rebase\", \"squash\""
+    required: false
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: "Determine pull request number"
+      uses: "actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3" # v9.0.0
+      with:
+        github-token: "${{ inputs.github-token }}"
+        script: |
+          if (
+            context.eventName == 'pull_request' ||
+            context.eventName == 'pull_request_target'
+          ) {
+            core.exportVariable("PULL_REQUEST_NUMBER", context.payload.pull_request.number);
+
+            return;
+          }
+
+          if (
+            context.eventName == 'workflow_run' &&
+            Array.isArray(context.payload.workflow_run.pull_requests) &&
+            context.payload.workflow_run.pull_requests.length > 0
+          ) {
+            core.exportVariable("PULL_REQUEST_NUMBER", context.payload.workflow_run.pull_requests[0].number);
+
+            return;
+          }
+
+          core.setFailed(`Unable to determine the pull request number for event "${context.eventName}"`);
+
+    # GitHub refuses to enable auto-merge for a pull request that can already
+    # be merged ("clean" or "unstable" status), so such a pull request is
+    # merged right away instead. Since pull requests merged at the same time
+    # move the base branch under each other, a merge that GitHub rejects
+    # because the base branch was modified is retried.
+    - name: "Enable auto-merge for pull request"
+      uses: "actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3" # v9.0.0
+      env:
+        MERGE_METHOD: "${{ inputs.merge-method }}"
+      with:
+        github-token: "${{ inputs.github-token }}"
+        script: |
+          if (!process.env.PULL_REQUEST_NUMBER) {
+            core.setFailed("The environment variable PULL_REQUEST_NUMBER is not defined.");
+
+            return;
+          }
+
+          const mergeMethods = [
+            "merge",
+            "rebase",
+            "squash",
+          ];
+
+          if (!mergeMethods.includes(process.env.MERGE_METHOD)) {
+            core.setFailed(`The value for the "merge-method" input needs to be one of "merge", "rebase", "squash" - got "${process.env.MERGE_METHOD}" instead.`);
+
+            return;
+          }
+
+          try {
+            const pullRequest = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              pull_number: process.env.PULL_REQUEST_NUMBER,
+              repo: context.repo.repo,
+            });
+
+            await github.graphql(
+              `mutation ($mergeMethod: PullRequestMergeMethod!, $pullRequestId: ID!) {
+                enablePullRequestAutoMerge(input: {mergeMethod: $mergeMethod, pullRequestId: $pullRequestId}) {
+                  clientMutationId
+                }
+              }`,
+              {
+                mergeMethod: process.env.MERGE_METHOD.toUpperCase(),
+                pullRequestId: pullRequest.data.node_id,
+              },
+            );
+          } catch (error) {
+            if (!/(clean|unstable) status/i.test(error.message)) {
+              core.setFailed(error.message);
+
+              return;
+            }
+
+            const maximumAttempts = 5;
+
+            for (let attempt = 1; attempt <= maximumAttempts; attempt++) {
+              try {
+                await github.rest.pulls.merge({
+                  merge_method: process.env.MERGE_METHOD,
+                  owner: context.repo.owner,
+                  pull_number: process.env.PULL_REQUEST_NUMBER,
+                  repo: context.repo.repo,
+                });
+
+                return;
+              } catch (error) {
+                if (
+                  attempt === maximumAttempts ||
+                  !/base branch was modified/i.test(error.message)
+                ) {
+                  core.setFailed(error.message);
+
+                  return;
+                }
+
+                core.info(`Merging the pull request failed because the base branch was modified, retrying (attempt ${attempt} of ${maximumAttempts}).`);
+
+                await new Promise((resolve) => setTimeout(resolve, attempt * 5000));
+              }
+            }
+          }
