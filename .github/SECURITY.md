@@ -4,13 +4,13 @@
 
 The following versions of `ergebnis/.github` have active support:
 
-- `^1.13.4`
+- `^1.14.0`
 
 ## Unsupported Versions
 
 The following versions of `ergebnis/.github` have reached their end of life:
 
-- `<1.13.4`
+- `<1.14.0`
 
 ## Reporting a Vulnerability
 
