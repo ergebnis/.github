@@ -14,11 +14,22 @@ inputs:
   oh-dear-site-id:
     description: "Site identifier of an Oh Dear site for which to start a maintenance period"
     required: true
+  oh-dear-stop-maintenance-after-seconds:
+    default: ""
+    description: "Number of seconds after which Oh Dear stops the maintenance period, from 5 to 999999999; when empty, Oh Dear stops it after 3600 seconds"
+    required: false
 
 runs:
   using: "composite"
 
   steps:
+    - name: "Determine request body"
+      id: "request-body"
+      env:
+        OH_DEAR_STOP_MAINTENANCE_AFTER_SECONDS: "${{ inputs.oh-dear-stop-maintenance-after-seconds }}"
+      run: "\"${GITHUB_ACTION_PATH}/request-body.sh\""
+      shell: "bash"
+
     # A rate-limited request is not tolerated: when the maintenance period
     # does not start, Oh Dear notifies about incidents that it should have
     # suppressed.
@@ -26,6 +37,7 @@ runs:
       env:
         OH_DEAR_API_TOKEN: "${{ inputs.oh-dear-api-token }}"
         OH_DEAR_OPERATION: "Starting a maintenance period"
+        OH_DEAR_REQUEST_BODY: "${{ steps.request-body.outputs.request-body }}"
         OH_DEAR_TOLERATE_RATE_LIMIT: "false"
         OH_DEAR_URL: "https://ohdear.app/api/monitors/${{ inputs.oh-dear-site-id }}/start-maintenance"
       run: "\"${GITHUB_ACTION_PATH}/../../request.sh\""
