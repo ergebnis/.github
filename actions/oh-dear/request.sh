@@ -2,6 +2,7 @@
 
 apiToken="${OH_DEAR_API_TOKEN}"
 operation="${OH_DEAR_OPERATION}"
+requestBody="${OH_DEAR_REQUEST_BODY}"
 tolerateRateLimit="${OH_DEAR_TOLERATE_RATE_LIMIT}"
 url="${OH_DEAR_URL}"
 
@@ -10,7 +11,14 @@ bodyFile="$(mktemp)"
 
 trap 'rm -f "${headerFile}" "${bodyFile}"' EXIT
 
+dataOptions=()
+
+if [[ -n ${requestBody} ]]; then
+    dataOptions=(--data "${requestBody}")
+fi
+
 status="$(curl --url "${url}" \
+  "${dataOptions[@]}" \
   --dump-header "${headerFile}" \
   --header "Accept: application/json" \
   --header "Authorization: Bearer ${apiToken}" \

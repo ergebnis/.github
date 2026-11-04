@@ -718,6 +718,7 @@ jobs:
         with:
           oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
           oh-dear-site-id: "${{ secrets.OH_DEAR_SITE_ID }}"
+          oh-dear-stop-maintenance-after-seconds: "7200"
 ```
 
 For details, see [`actions/oh-dear/maintenance-period/start/action.yaml`](actions/oh-dear/maintenance-period/start/action.yaml).
@@ -726,6 +727,7 @@ For details, see [`actions/oh-dear/maintenance-period/start/action.yaml`](action
 
 - `oh-dear-api-token`, required: The Oh Dear API token of a user with permission to start a maintenance period
 - `oh-dear-site-id`, required: Site identifier of an Oh Dear site for which to start a maintenance period
+- `oh-dear-stop-maintenance-after-seconds`, optional: The number of seconds after which Oh Dear stops the maintenance period, from `5` to `999999999`. When empty, Oh Dear stops the maintenance period after `3600` seconds. Defaults to `""`.
 
 #### Outputs
 

@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.14.0...main`][1.14.0...main].
 
+### Added
+
+- Added `oh-dear-stop-maintenance-after-seconds` input to `oh-dear/maintenance-period/start` to allow configuring after how many seconds Oh Dear stops the maintenance period ([#322]), by [@localheinz]
+
 ## [`1.14.0`][1.14.0]
 
 For a full diff see [`1.13.4...1.14.0`][1.13.4...1.14.0].
@@ -360,6 +364,7 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [#294]: https://github.com/ergebnis/.github/pull/294
 [#295]: https://github.com/ergebnis/.github/pull/295
 [#312]: https://github.com/ergebnis/.github/pull/312
+[#322]: https://github.com/ergebnis/.github/pull/322
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
