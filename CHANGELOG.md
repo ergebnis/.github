@@ -6,7 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`1.14.0...main`][1.14.0...main].
+For a full diff see [`1.15.0...main`][1.15.0...main].
+
+## [`1.15.0`][1.15.0]
+
+For a full diff see [`1.14.0...1.15.0`][1.14.0...1.15.0].
 
 ### Added
 
@@ -287,6 +291,7 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [1.13.3]: https://github.com/ergebnis/.github/releases/tag/1.13.3
 [1.13.4]: https://github.com/ergebnis/.github/releases/tag/1.13.4
 [1.14.0]: https://github.com/ergebnis/.github/releases/tag/1.14.0
+[1.15.0]: https://github.com/ergebnis/.github/releases/tag/1.15.0
 
 [ca7f15d...1.0.0]: https://github.com/ergebnis/.github/compare/ca7f15d...1.0.0
 [1.0.0...1.1.0]: https://github.com/ergebnis/.github/compare/1.0.0...1.1.0
@@ -315,7 +320,8 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [1.13.2...1.13.3]: https://github.com/ergebnis/.github/compare/1.13.2...1.13.3
 [1.13.3...1.13.4]: https://github.com/ergebnis/.github/compare/1.13.3...1.13.4
 [1.13.4...1.14.0]: https://github.com/ergebnis/.github/compare/1.13.4...1.14.0
-[1.14.0...main]: https://github.com/ergebnis/.github/compare/1.14.0...main
+[1.14.0...1.15.0]: https://github.com/ergebnis/.github/compare/1.14.0...1.15.0
+[1.15.0...main]: https://github.com/ergebnis/.github/compare/1.15.0...main
 
 [#47]: https://github.com/ergebnis/.github/pull/47
 [#49]: https://github.com/ergebnis/.github/pull/49
