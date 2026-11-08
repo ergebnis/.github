@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.15.0...main`][1.15.0...main].
 
+### Changed
+
+- Adjusted `phive/install` to fail with an error message when `phive` cannot be run ([#324]), by [@localheinz]
+
 ## [`1.15.0`][1.15.0]
 
 For a full diff see [`1.14.0...1.15.0`][1.14.0...1.15.0].
@@ -371,6 +375,7 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [#295]: https://github.com/ergebnis/.github/pull/295
 [#312]: https://github.com/ergebnis/.github/pull/312
 [#322]: https://github.com/ergebnis/.github/pull/322
+[#324]: https://github.com/ergebnis/.github/pull/324
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
