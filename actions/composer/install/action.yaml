@@ -21,6 +21,14 @@ runs:
   using: "composite"
 
   steps:
+    - name: "Show composer version"
+      run: |
+        if ! composer --ansi --version; then
+          echo "::error::Could not run composer. Verify that composer is installed, for example with shivammathur/setup-php, and that its download did not fail."
+          exit 1
+        fi
+      shell: "bash"
+
     - name: "Install ${{ inputs.dependencies }} dependencies with composer"
       env:
         COMPOSER_INSTALL_DEPENDENCIES: "${{ inputs.dependencies }}"
