@@ -835,6 +835,7 @@ none
 #### Side Effects
 
 - Given that `phive` is available, `phive` could find a `phars.xml`, and keys presented by packages are listed using the `trust-gpg-keys` option, dependencies are installed with `phive`.
+- When `phive` cannot be run, for example because `shivammathur/setup-php` could not download it, the step fails with an error message before installing dependencies.
 
 The directory configured by the `phive-home` directory is cached using [`actions/cache`](https://github.com/actions/cache).
 
