@@ -28,6 +28,18 @@ make coding-standards
 
 to detect coding standard violations.
 
+## Documentation
+
+The `README.md` of each composite action documents it. The list and the sections of composite actions in [`README.md`](../README.md) are generated from them.
+
+After changing the `README.md` of a composite action, run
+
+```sh
+make documentation
+```
+
+to update [`README.md`](../README.md).
+
 ## Extra lazy?
 
 Run
@@ -36,7 +48,7 @@ Run
 make
 ```
 
-to detect coding standard violations!
+to detect coding standard violations and update the documentation!
 
 ## Help
 

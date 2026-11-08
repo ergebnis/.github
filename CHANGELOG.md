@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.16.0...main`][1.16.0...main].
 
+### Changed
+
+- Moved the usage example, inputs, outputs, and side effects of each composite action from `README.md` into a `README.md` next to its `action.yaml` ([#328]), by [@localheinz]
+
 ## [`1.16.0`][1.16.0]
 
 For a full diff see [`1.15.0...1.16.0`][1.15.0...1.16.0].
@@ -386,6 +390,7 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [#324]: https://github.com/ergebnis/.github/pull/324
 [#325]: https://github.com/ergebnis/.github/pull/325
 [#326]: https://github.com/ergebnis/.github/pull/326
+[#328]: https://github.com/ergebnis/.github/pull/328
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
