@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 50
 
       - name: "Start maintenance period on ohdear.app"
-        uses: "ergebnis/.github/actions/oh-dear/maintenance-period/start@1.16.0"
+        uses: "ergebnis/.github/actions/oh-dear/maintenance-period/start@1.17.0"
         with:
           oh-dear-api-token: "${{ secrets.OH_DEAR_API_TOKEN }}"
           oh-dear-site-id: "${{ secrets.OH_DEAR_SITE_ID }}"

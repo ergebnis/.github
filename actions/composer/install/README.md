@@ -35,7 +35,7 @@ jobs:
           php-version: "8.1"
 
       - name: "Determine composer cache directory"
-        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.16.0"
+        uses: "ergebnis/.github/actions/composer/determine-cache-directory@1.17.0"
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v6.1.0"
@@ -45,7 +45,7 @@ jobs:
           restore-keys: "composer-${{ matrix.dependencies }}-"
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-        uses: "ergebnis/.github/actions/composer/install@1.16.0"
+        uses: "ergebnis/.github/actions/composer/install@1.17.0"
         with:
           dependencies: "${{ matrix.dependencies }}"
 ```

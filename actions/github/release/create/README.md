@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: "Create release"
-        uses: "ergebnis/.github/actions/github/release/create@1.16.0"
+        uses: "ergebnis/.github/actions/github/release/create@1.17.0"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
 ```

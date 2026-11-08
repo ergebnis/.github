@@ -29,7 +29,7 @@ jobs:
           tools: "phive"
 
       - name: "Install dependencies with phive"
-        uses: "ergebnis/.github/actions/phive/install@1.16.0"
+        uses: "ergebnis/.github/actions/phive/install@1.17.0"
         with:
           trust-gpg-keys: "0x033E5F8D801A2F8D,0x2A8299CE842DD38C"
 ```

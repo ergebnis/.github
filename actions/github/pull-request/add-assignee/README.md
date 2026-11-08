@@ -31,7 +31,7 @@ jobs:
 
     steps:
       - name: "Assign @ergebnis-bot"
-        uses: "ergebnis/.github/actions/github/pull-request/add-assignee@1.16.0"
+        uses: "ergebnis/.github/actions/github/pull-request/add-assignee@1.17.0"
         with:
           assignee: "ergebnis-bot"
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"

@@ -31,7 +31,7 @@ jobs:
 
     steps:
       - name: "Merge pull request"
-        uses: "ergebnis/.github/actions/github/pull-request/merge@1.16.0"
+        uses: "ergebnis/.github/actions/github/pull-request/merge@1.17.0"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
 ```

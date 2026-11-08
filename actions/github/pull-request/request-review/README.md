@@ -31,7 +31,7 @@ jobs:
 
     steps:
       - name: "Request review from @ergebnis-bot"
-        uses: "ergebnis/.github/actions/github/pull-request/request-review@1.16.0"
+        uses: "ergebnis/.github/actions/github/pull-request/request-review@1.17.0"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
           reviewer: "ergebnis-bot"
