@@ -25,6 +25,7 @@ updates:
       - "/actions/oh-dear/maintenance-period/start"
       - "/actions/oh-dear/maintenance-period/stop"
       - "/actions/phive/install"
+      - "/actions/sentry/cli/install"
     groups:
       github-actions:
         applies-to: "version-updates"
