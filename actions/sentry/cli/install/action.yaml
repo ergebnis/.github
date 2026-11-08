@@ -1,0 +1,31 @@
+# https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#outputs-for-composite-actions
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-run-steps-actions
+# https://docs.github.com/en/rest/releases/assets
+# https://docs.sentry.io/cli/installation/#manual-download
+# https://github.blog/changelog/2025-06-03-releases-now-expose-digests-for-release-assets/
+# https://github.com/getsentry/sentry-cli/releases
+
+name: "Install sentry-cli"
+
+description: "Installs sentry-cli"
+
+outputs:
+  path:
+    description: "Path to the sentry-cli binary"
+    value: "${{ steps.install.outputs.path }}"
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: "Install sentry-cli"
+      id: "install"
+      run: "\"${GITHUB_ACTION_PATH}/install.sh\""
+      shell: "bash"
+
+    - name: "Show sentry-cli version"
+      env:
+        SENTRY_CLI: "${{ steps.install.outputs.path }}"
+      run: "\"${SENTRY_CLI}\" --version"
+      shell: "bash"

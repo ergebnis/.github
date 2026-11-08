@@ -1,0 +1,63 @@
+# https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-composite-run-steps-actions
+# https://docs.sentry.io/cli/releases/
+
+name: "Create a release on Sentry"
+
+description: "Creates a release on Sentry, associates commits with it, finalizes it, and records a deploy"
+
+inputs:
+  sentry-auth-token:
+    description: "Sentry auth token with permission to create releases and deploys"
+    required: true
+  sentry-environment:
+    description: "Name of the environment to which the release has been deployed"
+    required: true
+  sentry-organization:
+    description: "Slug of the Sentry organization"
+    required: true
+  sentry-project:
+    description: "Slug of the Sentry project"
+    required: true
+  sentry-release:
+    description: "Version of the release"
+    required: true
+
+runs:
+  using: "composite"
+
+  steps:
+    # The install script is run directly rather than through
+    # ergebnis/.github/actions/sentry/cli/install, because a composite action
+    # can only use another action by a ref, which would pin this action to an
+    # earlier release of its own repository.
+    - name: "Install sentry-cli"
+      id: "install"
+      run: "\"${GITHUB_ACTION_PATH}/../../cli/install/install.sh\""
+      shell: "bash"
+
+    - name: "Show sentry-cli version"
+      env:
+        SENTRY_CLI: "${{ steps.install.outputs.path }}"
+      run: "\"${SENTRY_CLI}\" --version"
+      shell: "bash"
+
+    # Commits are associated with "--auto", which reads the repository in the
+    # working directory, so the job needs a checkout with enough history to
+    # contain the commit of the previous release, for example with fetch-depth 0.
+    - name: "Create release on Sentry"
+      env:
+        SENTRY_AUTH_TOKEN: "${{ inputs.sentry-auth-token }}"
+        SENTRY_CLI: "${{ steps.install.outputs.path }}"
+        SENTRY_DISABLE_UPDATE_CHECK: "true"
+        SENTRY_ENVIRONMENT: "${{ inputs.sentry-environment }}"
+        SENTRY_ORG: "${{ inputs.sentry-organization }}"
+        SENTRY_PROJECT: "${{ inputs.sentry-project }}"
+        SENTRY_RELEASE: "${{ inputs.sentry-release }}"
+      run: |
+        "${SENTRY_CLI}" releases new "${SENTRY_RELEASE}"
+        "${SENTRY_CLI}" releases set-commits --auto --ignore-missing "${SENTRY_RELEASE}"
+        "${SENTRY_CLI}" releases finalize "${SENTRY_RELEASE}"
+        "${SENTRY_CLI}" deploys new --env "${SENTRY_ENVIRONMENT}" --release "${SENTRY_RELEASE}"
+      shell: "bash"

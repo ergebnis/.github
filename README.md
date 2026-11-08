@@ -27,6 +27,8 @@ This project provides the following composite actions:
 - [`ergebnis/.github/actions/oh-dear/maintenance-period/start`](#oh-dear-maintenance-period-start)
 - [`ergebnis/.github/actions/oh-dear/maintenance-period/stop`](#oh-dear-maintenance-period-stop)
 - [`ergebnis/.github/actions/phive/install`](#phive-install)
+- [`ergebnis/.github/actions/sentry/cli/install`](#sentry-cli-install)
+- [`ergebnis/.github/actions/sentry/release/create`](#sentry-release-create)
 
 ### <a name="composer-determine-cache-directory"> `ergebnis/.github/actions/composer/determine-cache-directory`
 
@@ -139,6 +141,18 @@ This action stops a [maintenance period](https://ohdear.app/docs/general/mainten
 This action installs dependencies with [`phive`](https://phar.io).
 
 💡 Find out more in the documentation for [`ergebnis/.github/actions/phive/install`](actions/phive/install/README.md).
+
+### <a name="sentry-cli-install"> `ergebnis/.github/actions/sentry/cli/install`
+
+This action installs [`sentry-cli`](https://github.com/getsentry/sentry-cli).
+
+💡 Find out more in the documentation for [`ergebnis/.github/actions/sentry/cli/install`](actions/sentry/cli/install/README.md).
+
+### <a name="sentry-release-create"> `ergebnis/.github/actions/sentry/release/create`
+
+This action creates a [release](https://docs.sentry.io/product/releases/) on [Sentry](https://sentry.io) with [`sentry-cli`](https://github.com/getsentry/sentry-cli), associates commits with it, finalizes it, and records a deploy.
+
+💡 Find out more in the documentation for [`ergebnis/.github/actions/sentry/release/create`](actions/sentry/release/create/README.md).
 
 <!-- END ACTIONS -->
 

@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.16.0...main`][1.16.0...main].
 
+### Added
+
+- Added composite action `sentry/release/create` for creating a release on [sentry.io](https://sentry.io) with [`sentry-cli`](https://github.com/getsentry/sentry-cli) ([#327]), by [@localheinz]
+- Added composite action `sentry/cli/install` for installing [`sentry-cli`](https://github.com/getsentry/sentry-cli) ([#329]), by [@localheinz]
+
 ### Changed
 
 - Moved the usage example, inputs, outputs, and side effects of each composite action from `README.md` into a `README.md` next to its `action.yaml` ([#328]), by [@localheinz]
@@ -390,7 +395,9 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [#324]: https://github.com/ergebnis/.github/pull/324
 [#325]: https://github.com/ergebnis/.github/pull/325
 [#326]: https://github.com/ergebnis/.github/pull/326
+[#327]: https://github.com/ergebnis/.github/pull/327
 [#328]: https://github.com/ergebnis/.github/pull/328
+[#329]: https://github.com/ergebnis/.github/pull/329
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
