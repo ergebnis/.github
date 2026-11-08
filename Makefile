@@ -1,9 +1,13 @@
 .PHONY: it
-it: coding-standards ## Runs the coding-standards target
+it: coding-standards documentation ## Runs the coding-standards and documentation targets
 
 .PHONY: coding-standards
 coding-standards: ## Lints YAML files with yamllint
 	yamllint -c .yamllint.yaml --strict .
+
+.PHONY: documentation
+documentation: ## Generates documentation of composite actions in README.md
+	php bin/generate-documentation.php
 
 .PHONY: help
 help: ## Displays this list of targets with descriptions
