@@ -20,9 +20,9 @@ runs:
   using: "composite"
 
   steps:
-    - name: "Verify that phive can be run"
+    - name: "Show phive version"
       run: |
-        if ! phive --version > /dev/null 2>&1; then
+        if ! phive --version; then
           echo "::error::Could not run phive. Verify that phive is installed, for example with shivammathur/setup-php, and that its download did not fail."
           exit 1
         fi

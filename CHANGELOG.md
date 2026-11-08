@@ -11,6 +11,7 @@ For a full diff see [`1.15.0...main`][1.15.0...main].
 ### Changed
 
 - Adjusted `phive/install` to fail with an error message when `phive` cannot be run ([#324]), by [@localheinz]
+- Adjusted `composer/install` and `phive/install` to show the versions of `composer` and `phive` before installing dependencies ([#325]), by [@localheinz]
 
 ## [`1.15.0`][1.15.0]
 
@@ -376,6 +377,7 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [#312]: https://github.com/ergebnis/.github/pull/312
 [#322]: https://github.com/ergebnis/.github/pull/322
 [#324]: https://github.com/ergebnis/.github/pull/324
+[#325]: https://github.com/ergebnis/.github/pull/325
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
