@@ -207,6 +207,8 @@ none
 
 #### Side Effects
 
+- Before installing dependencies, the version of `composer` is shown with `composer --version`. When `composer` cannot be run, for example because `shivammathur/setup-php` could not download it, the step fails with an error message.
+
 - When `dependencies` is set to `"lowest"`, dependencies are installed in the directory specified by `working-directory` with
 
   ```shell
@@ -835,7 +837,7 @@ none
 #### Side Effects
 
 - Given that `phive` is available, `phive` could find a `phars.xml`, and keys presented by packages are listed using the `trust-gpg-keys` option, dependencies are installed with `phive`.
-- When `phive` cannot be run, for example because `shivammathur/setup-php` could not download it, the step fails with an error message before installing dependencies.
+- Before installing dependencies, the version of `phive` is shown with `phive --version`. When `phive` cannot be run, for example because `shivammathur/setup-php` could not download it, the step fails with an error message.
 
 The directory configured by the `phive-home` directory is cached using [`actions/cache`](https://github.com/actions/cache).
 
