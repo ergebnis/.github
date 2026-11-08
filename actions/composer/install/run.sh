@@ -9,12 +9,6 @@ if [[ ! -d ${workingDirectory} ]]; then
   exit 1;
 fi
 
-if ! composer --ansi --version; then
-  echo "::error::Could not run composer. Verify that composer is installed, for example with shivammathur/setup-php, and that its download did not fail."
-
-  exit 1;
-fi
-
 if [[ ${dependencies} == "lowest" ]]; then
     composer update --ansi --no-interaction --no-progress --prefer-lowest --working-dir="${workingDirectory}"
 
