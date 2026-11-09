@@ -97,11 +97,22 @@ declare(strict_types=1);
             $anchor,
         );
 
-        $documentation = @\file_get_contents($root . '/' . $action . '/README.md');
+        $documentationFile = $root . '/' . $action . '/README.md';
+
+        if (!\is_file($documentationFile)) {
+            \fwrite(\STDERR, \sprintf(
+                "%s/README.md does not exist.\n",
+                $action,
+            ));
+
+            exit(1);
+        }
+
+        $documentation = \file_get_contents($documentationFile);
 
         if (!\is_string($documentation)) {
             \fwrite(\STDERR, \sprintf(
-                "%s/README.md does not exist.\n",
+                "Could not read %s/README.md.\n",
                 $action,
             ));
 
@@ -170,8 +181,26 @@ declare(strict_types=1);
         $readme,
     );
 
-    \file_put_contents(
+    if (!\is_string($replaced)) {
+        \fwrite(
+            \STDERR,
+            "Could not replace the composite actions in README.md.\n",
+        );
+
+        exit(1);
+    }
+
+    $written = \file_put_contents(
         $readmeFile,
         $replaced,
     );
+
+    if ($written === false) {
+        \fwrite(
+            \STDERR,
+            "Could not write README.md.\n",
+        );
+
+        exit(1);
+    }
 })();
