@@ -32,6 +32,6 @@ jobs:
           TWITTER_CONSUMER_API_SECRET: "${{ secrets.ERGEBNIS_TWITTER_CONSUMER_API_KEY_SECRET }}"
         with:
           tweet-message: |
-            ❤️ Just released: ${{ github.event.repository.owner.login }}/${{ github.event.repository.name }}:${{ env.RELEASE_TAG }}.
+            🧰 Just released: ${{ github.event.repository.owner.login }}/${{ github.event.repository.name }}:${{ env.RELEASE_TAG }}.
 
             ${{ env.RELEASE_HTML_URL }}
