@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: "Install sentry-cli"
-        uses: "ergebnis/.github/actions/sentry/cli/install@1.17.0"
+        uses: "ergebnis/.github/actions/sentry/cli/install@1.17.1"
 
       - name: "Show information about the Sentry auth token"
         env:

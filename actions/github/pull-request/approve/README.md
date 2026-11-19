@@ -31,7 +31,7 @@ jobs:
 
     steps:
       - name: "Approve pull request"
-        uses: "ergebnis/.github/actions/github/pull-request/approve@1.17.0"
+        uses: "ergebnis/.github/actions/github/pull-request/approve@1.17.1"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
 ```

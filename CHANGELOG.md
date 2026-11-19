@@ -6,7 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`1.17.0...main`][1.17.0...main].
+For a full diff see [`1.17.1...main`][1.17.1...main].
+
+## [`1.17.1`][1.17.1]
+
+For a full diff see [`1.17.0...1.17.1`][1.17.0...1.17.1].
 
 ### Fixed
 
@@ -352,7 +356,9 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [1.16.0]: https://github.com/ergebnis/.github/releases/tag/1.16.0
 [1.16.0...1.17.0]: https://github.com/ergebnis/.github/compare/1.16.0...1.17.0
 [1.17.0]: https://github.com/ergebnis/.github/releases/tag/1.17.0
-[1.17.0...main]: https://github.com/ergebnis/.github/compare/1.17.0...main
+[1.17.0...1.17.1]: https://github.com/ergebnis/.github/compare/1.17.0...1.17.1
+[1.17.1]: https://github.com/ergebnis/.github/releases/tag/1.17.1
+[1.17.1...main]: https://github.com/ergebnis/.github/compare/1.17.1...main
 
 [#47]: https://github.com/ergebnis/.github/pull/47
 [#49]: https://github.com/ergebnis/.github/pull/49

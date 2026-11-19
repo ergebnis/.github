@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
 
       - name: "Create release on Sentry"
-        uses: "ergebnis/.github/actions/sentry/release/create@1.17.0"
+        uses: "ergebnis/.github/actions/sentry/release/create@1.17.1"
         with:
           sentry-auth-token: "${{ secrets.SENTRY_AUTH_TOKEN }}"
           sentry-environment: "production"

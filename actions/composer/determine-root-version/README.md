@@ -30,7 +30,7 @@ jobs:
           php-version: "8.1"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@1.17.0"
+        uses: "ergebnis/.github/actions/composer/determine-root-version@1.17.1"
 ```
 
 For details, see [`action.yaml`](action.yaml).
