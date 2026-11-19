@@ -32,6 +32,9 @@ runs:
 
     - name: "Create release"
       uses: "actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3" # v9.0.0
+      env:
+        DRAFT: "${{ inputs.draft }}"
+        PRERELEASE: "${{ inputs.prerelease }}"
       with:
         github-token: "${{ inputs.github-token }}"
         script: |
@@ -43,11 +46,11 @@ runs:
 
           try {
             const response = await github.rest.repos.createRelease({
-              draft: ${{ fromJSON(inputs.draft) }},
+              draft: process.env.DRAFT === 'true',
               generate_release_notes: true,
               name: process.env.RELEASE_TAG,
               owner: context.repo.owner,
-              prerelease: ${{ fromJSON(inputs.prerelease) }},
+              prerelease: process.env.PRERELEASE === 'true',
               repo: context.repo.repo,
               tag_name: process.env.RELEASE_TAG,
             });

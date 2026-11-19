@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.17.0...main`][1.17.0...main].
 
+### Fixed
+
+- Adjusted `github/release/create` to pass the `draft` and `prerelease` inputs to the script through environment variables instead of expanding them into it ([#334]), by [@localheinz]
+
 ## [`1.17.0`][1.17.0]
 
 For a full diff see [`1.16.0...1.17.0`][1.16.0...1.17.0].
@@ -404,6 +408,7 @@ For a full diff see [`ca7f15d...1.0.0`][ca7f15d...1.0.0].
 [#327]: https://github.com/ergebnis/.github/pull/327
 [#328]: https://github.com/ergebnis/.github/pull/328
 [#329]: https://github.com/ergebnis/.github/pull/329
+[#334]: https://github.com/ergebnis/.github/pull/334
 
 [@dependabot]: https://github.com/dependabot
 [@ellisvalentiner]: https://github.com/ellisvalentiner
